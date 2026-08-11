@@ -1,13 +1,15 @@
 """
-LLM client with request tracking.
+LLM client with request tracking and transient-error retry handling.
 
 The client is intentionally configuration-driven:
+
 - provider
 - model
 - API key
 - base URL
 - temperature
 - timeout
+- maximum output tokens
 
 are supplied externally.
 
@@ -16,7 +18,6 @@ No API key or model name is hard-coded here.
 
 from __future__ import annotations
 
-import os
 import time
 from dataclasses import dataclass
 from typing import Any, Dict, Optional
@@ -73,6 +74,9 @@ class LLMClient:
         base_url: str,
         temperature: float = 0.0,
         timeout: int = 60,
+        max_output_tokens: int = 1500,
+        max_request_retries: int = 3,
+        retry_base_delay: float = 2.0,
     ) -> None:
 
         if not api_key:
@@ -89,11 +93,29 @@ class LLMClient:
                 "Temperature must be between 0.0 and 2.0."
             )
 
+        if max_output_tokens <= 0:
+            raise ValueError(
+                "max_output_tokens must be greater than 0."
+            )
+
+        if max_request_retries < 0:
+            raise ValueError(
+                "max_request_retries cannot be negative."
+            )
+
+        if retry_base_delay < 0:
+            raise ValueError(
+                "retry_base_delay cannot be negative."
+            )
+
         self.api_key = api_key
         self.model = model
         self.base_url = base_url.rstrip("/")
         self.temperature = temperature
         self.timeout = timeout
+        self.max_output_tokens = max_output_tokens
+        self.max_request_retries = max_request_retries
+        self.retry_base_delay = retry_base_delay
 
         self.call_count = 0
         self.total_input_tokens = 0
@@ -108,6 +130,13 @@ class LLMClient:
     ) -> LLMResponse:
         """
         Send a prompt to the configured LLM.
+
+        Retries transient HTTP failures such as:
+        - 429 Too Many Requests
+        - 500
+        - 502
+        - 503
+        - 504
 
         Returns a normalized LLMResponse containing:
         - generated text
@@ -141,6 +170,13 @@ class LLMClient:
             "model": self.model,
             "messages": messages,
             "temperature": self.temperature,
+            "max_tokens": self.max_output_tokens,
+
+            # Ask the provider/model for a JSON object.
+            # OpenRouter supports this for compatible models.
+            "response_format": {
+                "type": "json_object"
+            },
         }
 
         headers = {
@@ -152,20 +188,11 @@ class LLMClient:
 
         start_time = time.perf_counter()
 
-        try:
-            response = requests.post(
-                endpoint,
-                headers=headers,
-                json=payload,
-                timeout=self.timeout,
-            )
-
-            response.raise_for_status()
-
-        except requests.RequestException as exc:
-            raise RuntimeError(
-                f"LLM API request failed: {exc}"
-            ) from exc
+        response = self._post_with_retries(
+            endpoint=endpoint,
+            headers=headers,
+            payload=payload,
+        )
 
         latency_ms = round(
             (time.perf_counter() - start_time) * 1000,
@@ -221,6 +248,121 @@ class LLMClient:
             latency_ms=latency_ms,
             raw_response=data,
         )
+
+    def _post_with_retries(
+        self,
+        *,
+        endpoint: str,
+        headers: Dict[str, str],
+        payload: Dict[str, Any],
+    ) -> requests.Response:
+        """
+        Perform the HTTP request with controlled transient-error retries.
+        """
+
+        transient_statuses = {
+            429,
+            500,
+            502,
+            503,
+            504,
+        }
+
+        for attempt in range(self.max_request_retries + 1):
+            try:
+                response = requests.post(
+                    endpoint,
+                    headers=headers,
+                    json=payload,
+                    timeout=self.timeout,
+                )
+
+            except requests.RequestException as exc:
+                if attempt >= self.max_request_retries:
+                    raise RuntimeError(
+                        f"LLM API request failed: {exc}"
+                    ) from exc
+
+                delay = self._calculate_retry_delay(
+                    attempt=attempt,
+                    response=None,
+                )
+
+                print(
+                    f"    Transient network error. "
+                    f"Retrying in {delay:.1f}s...",
+                    flush=True,
+                )
+
+                time.sleep(delay)
+                continue
+
+            if response.status_code not in transient_statuses:
+                try:
+                    response.raise_for_status()
+                except requests.RequestException as exc:
+                    raise RuntimeError(
+                        f"LLM API request failed: {exc}"
+                    ) from exc
+
+                return response
+
+            if attempt >= self.max_request_retries:
+                try:
+                    response.raise_for_status()
+                except requests.RequestException as exc:
+                    raise RuntimeError(
+                        f"LLM API request failed after "
+                        f"{self.max_request_retries} retries: {exc}"
+                    ) from exc
+
+                raise RuntimeError(
+                    "LLM API request failed after retries."
+                )
+
+            delay = self._calculate_retry_delay(
+                attempt=attempt,
+                response=response,
+            )
+
+            print(
+                f"    HTTP {response.status_code} from LLM API. "
+                f"Retrying in {delay:.1f}s "
+                f"(attempt {attempt + 2}/"
+                f"{self.max_request_retries + 1})...",
+                flush=True,
+            )
+
+            time.sleep(delay)
+
+        raise RuntimeError("LLM API request failed unexpectedly.")
+
+    def _calculate_retry_delay(
+        self,
+        *,
+        attempt: int,
+        response: Optional[requests.Response],
+    ) -> float:
+        """
+        Calculate retry delay.
+
+        Prefer Retry-After when supplied by the server.
+        Otherwise use exponential backoff.
+        """
+
+        if response is not None:
+            retry_after = response.headers.get("Retry-After")
+
+            if retry_after:
+                try:
+                    retry_after_seconds = float(retry_after)
+
+                    if retry_after_seconds >= 0:
+                        return retry_after_seconds
+                except ValueError:
+                    pass
+
+        return self.retry_base_delay * (2 ** attempt)
 
     @staticmethod
     def _extract_text(data: Dict[str, Any]) -> str:
