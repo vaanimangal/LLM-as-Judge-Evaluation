@@ -1,0 +1,45 @@
+{
+  "mode": "pairwise",
+  "tests": [
+    {
+      "id": "pair_001",
+      "input": "What is the capital of France?",
+      "system_prompt": "Answer the question accurately and concisely.",
+      "expected_output": "The capital of France is Paris.",
+      "candidate_a": "The capital of France is Paris.",
+      "candidate_b": "The capital of France is Lyon."
+    },
+    {
+      "id": "pair_002",
+      "input": "Explain why regular exercise is beneficial.",
+      "system_prompt": "Give a clear and relevant explanation.",
+      "expected_output": "Regular exercise improves physical fitness, cardiovascular health, strength, and overall well-being.",
+      "candidate_a": "Regular exercise can improve cardiovascular health, physical fitness, strength, and overall well-being.",
+      "candidate_b": "Exercise is good because it makes people happy. It also gives people something to do and can be entertaining."
+    },
+    {
+      "id": "pair_003",
+      "input": "What is 15 multiplied by 8?",
+      "system_prompt": "Solve the arithmetic problem and provide the correct answer.",
+      "expected_output": "120",
+      "candidate_a": "15 × 8 = 120.",
+      "candidate_b": "15 × 8 = 110."
+    },
+    {
+      "id": "pair_004",
+      "input": "Explain photosynthesis in one sentence.",
+      "system_prompt": "Answer in exactly one clear sentence.",
+      "expected_output": "Photosynthesis is the process by which plants use sunlight, water, and carbon dioxide to produce glucose and oxygen.",
+      "candidate_a": "Photosynthesis is the process by which plants use sunlight, water, and carbon dioxide to produce glucose and oxygen.",
+      "candidate_b": "Photosynthesis is a biological process in plants and other photosynthetic organisms involving chlorophyll, light-dependent reactions, the Calvin cycle, electron transport, ATP synthesis, carbon fixation, and several biochemical pathways that ultimately convert light energy into chemical energy while releasing oxygen under oxygenic conditions."
+    },
+    {
+      "id": "pair_005",
+      "input": "What are two benefits of drinking enough water?",
+      "system_prompt": "Give exactly two benefits in a concise answer.",
+      "expected_output": "Drinking enough water helps maintain hydration and supports normal body functions.",
+      "candidate_a": "It helps maintain hydration and supports normal body functions.",
+      "candidate_b": "Drinking enough water helps maintain hydration, supports normal body functions, regulates temperature, supports digestion, lubricates joints, helps transport nutrients, and contributes to healthy skin."
+    }
+  ]
+}

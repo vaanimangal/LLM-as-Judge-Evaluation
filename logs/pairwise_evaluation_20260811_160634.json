@@ -1,0 +1,407 @@
+{
+  "experiment": {
+    "name": "Pairwise A/B LLM-as-Judge evaluation",
+    "mode": "pairwise",
+    "started_at": "2026-08-11T16:00:19.326859+00:00",
+    "completed_at": "2026-08-11T16:06:34.562520+00:00"
+  },
+  "summary": {
+    "total_pairs": 5,
+    "successful": 5,
+    "failed": 0,
+    "a_wins": 4,
+    "b_wins": 0,
+    "ties": 1,
+    "a_win_rate": 80.0,
+    "b_win_rate": 0.0,
+    "tie_rate": 20.0,
+    "overall_winner": "A"
+  },
+  "results": [
+    {
+      "status": "success",
+      "result": {
+        "test_id": "pair_001",
+        "candidate_a": {
+          "criteria": {
+            "correctness": {
+              "score": 5,
+              "rationale": "The answer correctly states that Paris is the capital of France."
+            },
+            "faithfulness": {
+              "score": 5,
+              "rationale": "The response matches the expected output exactly."
+            },
+            "completeness": {
+              "score": 5,
+              "rationale": "The answer provides the full required information without omission."
+            },
+            "instruction_following": {
+              "score": 5,
+              "rationale": "The response is accurate, concise, and directly addresses the question."
+            },
+            "relevance": {
+              "score": 5,
+              "rationale": "All content is directly related to the question."
+            },
+            "safety": {
+              "score": 5,
+              "rationale": "No unsafe or inappropriate content is present."
+            }
+          },
+          "average_score": 5.0,
+          "reported_average_score": 5.0
+        },
+        "candidate_b": {
+          "criteria": {
+            "correctness": {
+              "score": 1,
+              "rationale": "The answer incorrectly identifies Lyon as the capital."
+            },
+            "faithfulness": {
+              "score": 1,
+              "rationale": "The response deviates from the expected answer."
+            },
+            "completeness": {
+              "score": 5,
+              "rationale": "The answer is complete in length but contains incorrect content."
+            },
+            "instruction_following": {
+              "score": 1,
+              "rationale": "The response fails to provide the correct answer, violating the instruction."
+            },
+            "relevance": {
+              "score": 5,
+              "rationale": "The content is relevant to the question, though factually wrong."
+            },
+            "safety": {
+              "score": 5,
+              "rationale": "No unsafe content is present."
+            }
+          },
+          "average_score": 3.0,
+          "reported_average_score": 3.0
+        },
+        "winner": "A",
+        "reported_winner": "A",
+        "winner_agrees_with_report": true,
+        "overall_rationale": "Candidate A provides the correct, faithful, and concise answer, whereas Candidate B gives an incorrect answer, leading to a clear superiority.",
+        "usage": {
+          "model": "openai/gpt-oss-20b:free",
+          "input_tokens": 1064,
+          "output_tokens": 845,
+          "total_tokens": 1909,
+          "latency_ms": 30250.17
+        }
+      }
+    },
+    {
+      "status": "success",
+      "result": {
+        "test_id": "pair_002",
+        "candidate_a": {
+          "criteria": {
+            "correctness": {
+              "score": 5,
+              "rationale": "The response accurately states that regular exercise improves cardiovascular health, physical fitness, strength, and overall well‑being, matching the reference."
+            },
+            "faithfulness": {
+              "score": 5,
+              "rationale": "All key points from the reference are present and no additional or contradictory information is added."
+            },
+            "completeness": {
+              "score": 5,
+              "rationale": "The answer covers all major benefits listed in the reference, providing a full explanation."
+            },
+            "instruction_following": {
+              "score": 5,
+              "rationale": "The response is clear, concise, and directly addresses the user’s request for an explanation."
+            },
+            "relevance": {
+              "score": 5,
+              "rationale": "The content is directly relevant to the benefits of regular exercise."
+            },
+            "safety": {
+              "score": 5,
+              "rationale": "No unsafe or harmful content is present."
+            }
+          },
+          "average_score": 5.0,
+          "reported_average_score": 5.0
+        },
+        "candidate_b": {
+          "criteria": {
+            "correctness": {
+              "score": 2,
+              "rationale": "The answer mentions happiness and entertainment, which are not the primary benefits highlighted in the reference."
+            },
+            "faithfulness": {
+              "score": 1,
+              "rationale": "The response does not reflect the reference content and introduces unrelated points."
+            },
+            "completeness": {
+              "score": 2,
+              "rationale": "Key benefits such as cardiovascular health, fitness, and strength are omitted."
+            },
+            "instruction_following": {
+              "score": 2,
+              "rationale": "The explanation is vague and does not clearly address the user’s request."
+            },
+            "relevance": {
+              "score": 2,
+              "rationale": "While somewhat related to exercise, it fails to focus on the benefits asked for."
+            },
+            "safety": {
+              "score": 5,
+              "rationale": "No unsafe content is present."
+            }
+          },
+          "average_score": 2.3333,
+          "reported_average_score": 2.33
+        },
+        "winner": "A",
+        "reported_winner": "A",
+        "winner_agrees_with_report": true,
+        "overall_rationale": "Candidate A provides a fully correct, faithful, complete, and relevant explanation that follows the instruction, whereas Candidate B lacks accuracy and completeness.",
+        "usage": {
+          "model": "openai/gpt-oss-20b:free",
+          "input_tokens": 1095,
+          "output_tokens": 1057,
+          "total_tokens": 2152,
+          "latency_ms": 51040.11
+        }
+      }
+    },
+    {
+      "status": "success",
+      "result": {
+        "test_id": "pair_003",
+        "candidate_a": {
+          "criteria": {
+            "correctness": {
+              "score": 5,
+              "rationale": "The answer 120 matches the expected result of 15 × 8."
+            },
+            "faithfulness": {
+              "score": 5,
+              "rationale": "The response reproduces the reference output exactly."
+            },
+            "completeness": {
+              "score": 5,
+              "rationale": "The response provides the full, correct answer with no missing information."
+            },
+            "instruction_following": {
+              "score": 5,
+              "rationale": "It follows the instruction to solve the arithmetic problem and give the correct answer."
+            },
+            "relevance": {
+              "score": 5,
+              "rationale": "The content directly addresses the user’s question."
+            },
+            "safety": {
+              "score": 5,
+              "rationale": "No safety concerns are present."
+            }
+          },
+          "average_score": 5.0,
+          "reported_average_score": 5.0
+        },
+        "candidate_b": {
+          "criteria": {
+            "correctness": {
+              "score": 1,
+              "rationale": "The answer 110 is mathematically incorrect for 15 × 8."
+            },
+            "faithfulness": {
+              "score": 1,
+              "rationale": "The response does not match the expected output of 120."
+            },
+            "completeness": {
+              "score": 1,
+              "rationale": "Providing an incorrect result renders the answer incomplete relative to the task."
+            },
+            "instruction_following": {
+              "score": 1,
+              "rationale": "While the format follows the instruction, the incorrect answer fails to satisfy the requirement."
+            },
+            "relevance": {
+              "score": 5,
+              "rationale": "The response is still relevant to the question, though incorrect."
+            },
+            "safety": {
+              "score": 5,
+              "rationale": "No safety concerns are present."
+            }
+          },
+          "average_score": 2.3333,
+          "reported_average_score": 2.33
+        },
+        "winner": "A",
+        "reported_winner": "A",
+        "winner_agrees_with_report": true,
+        "overall_rationale": "Candidate A provides the correct, faithful, complete, and instruction‑compliant answer, whereas Candidate B’s answer is mathematically incorrect, making A the clear winner.",
+        "usage": {
+          "model": "openai/gpt-oss-20b:free",
+          "input_tokens": 1064,
+          "output_tokens": 1378,
+          "total_tokens": 2442,
+          "latency_ms": 87136.49
+        }
+      }
+    },
+    {
+      "status": "success",
+      "result": {
+        "test_id": "pair_004",
+        "candidate_a": {
+          "criteria": {
+            "correctness": {
+              "score": 5,
+              "rationale": "The sentence accurately describes photosynthesis, matching the reference."
+            },
+            "faithfulness": {
+              "score": 5,
+              "rationale": "It is identical to the expected output, showing perfect faithfulness."
+            },
+            "completeness": {
+              "score": 5,
+              "rationale": "All essential elements (sunlight, water, CO₂, glucose, oxygen) are present."
+            },
+            "instruction_following": {
+              "score": 5,
+              "rationale": "It is exactly one clear sentence, fulfilling the system prompt."
+            },
+            "relevance": {
+              "score": 5,
+              "rationale": "Directly answers the user’s request about photosynthesis."
+            },
+            "safety": {
+              "score": 5,
+              "rationale": "Contains no disallowed or harmful content."
+            }
+          },
+          "average_score": 5.0,
+          "reported_average_score": 5.0
+        },
+        "candidate_b": {
+          "criteria": {
+            "correctness": {
+              "score": 5,
+              "rationale": "The description is scientifically accurate, covering key processes."
+            },
+            "faithfulness": {
+              "score": 5,
+              "rationale": "All statements are true and relevant to photosynthesis."
+            },
+            "completeness": {
+              "score": 5,
+              "rationale": "It includes detailed mechanisms, providing a comprehensive view."
+            },
+            "instruction_following": {
+              "score": 5,
+              "rationale": "It remains a single sentence, meeting the length requirement."
+            },
+            "relevance": {
+              "score": 5,
+              "rationale": "The content directly addresses the question."
+            },
+            "safety": {
+              "score": 5,
+              "rationale": "No unsafe or disallowed content is present."
+            }
+          },
+          "average_score": 5.0,
+          "reported_average_score": 5.0
+        },
+        "winner": "TIE",
+        "reported_winner": "TIE",
+        "winner_agrees_with_report": true,
+        "overall_rationale": "Both responses satisfy all evaluation criteria equally, resulting in a tie.",
+        "usage": {
+          "model": "openai/gpt-oss-20b:free",
+          "input_tokens": 1139,
+          "output_tokens": 1142,
+          "total_tokens": 2281,
+          "latency_ms": 81250.29
+        }
+      }
+    },
+    {
+      "status": "success",
+      "result": {
+        "test_id": "pair_005",
+        "candidate_a": {
+          "criteria": {
+            "correctness": {
+              "score": 5,
+              "rationale": "Both benefits stated are scientifically accurate and free of misinformation."
+            },
+            "faithfulness": {
+              "score": 5,
+              "rationale": "The response matches the reference exactly, with no additions or omissions."
+            },
+            "completeness": {
+              "score": 5,
+              "rationale": "The answer provides exactly the two benefits requested, fully satisfying the question."
+            },
+            "instruction_following": {
+              "score": 5,
+              "rationale": "The response follows the system instruction to give exactly two benefits in a concise answer."
+            },
+            "relevance": {
+              "score": 5,
+              "rationale": "All content directly addresses the user’s question without extraneous information."
+            },
+            "safety": {
+              "score": 5,
+              "rationale": "No unsafe or inappropriate content is present."
+            }
+          },
+          "average_score": 5.0,
+          "reported_average_score": 5.0
+        },
+        "candidate_b": {
+          "criteria": {
+            "correctness": {
+              "score": 5,
+              "rationale": "All listed benefits are factually correct and supported by scientific knowledge."
+            },
+            "faithfulness": {
+              "score": 3,
+              "rationale": "The response adds benefits not present in the reference, partially deviating from the expected answer."
+            },
+            "completeness": {
+              "score": 2,
+              "rationale": "The answer exceeds the requested two benefits, failing to limit the response to the required amount."
+            },
+            "instruction_following": {
+              "score": 1,
+              "rationale": "The response violates the instruction to give exactly two benefits by providing seven."
+            },
+            "relevance": {
+              "score": 3,
+              "rationale": "While all information is relevant to hydration, the extra benefits are unnecessary for the specific question."
+            },
+            "safety": {
+              "score": 5,
+              "rationale": "No unsafe or inappropriate content is present."
+            }
+          },
+          "average_score": 3.1667,
+          "reported_average_score": 3.1666666666666665
+        },
+        "winner": "A",
+        "reported_winner": "A",
+        "winner_agrees_with_report": true,
+        "overall_rationale": "Candidate A satisfies all evaluation criteria, especially instruction-following and completeness, whereas Candidate B fails to adhere to the requirement of exactly two benefits.",
+        "usage": {
+          "model": "openai/gpt-oss-20b:free",
+          "input_tokens": 1101,
+          "output_tokens": 1360,
+          "total_tokens": 2461,
+          "latency_ms": 125546.07
+        }
+      }
+    }
+  ]
+}
