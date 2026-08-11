@@ -1,0 +1,45 @@
+{
+    "mode": "verbosity_bias",
+    "tests": [
+        {
+            "id": "verb_001",
+            "input": "What is the capital of France?",
+            "system_prompt": "Answer accurately and concisely.",
+            "expected_output": "The capital of France is Paris.",
+            "concise_answer": "The capital of France is Paris.",
+            "verbose_answer": "The capital of France is Paris. Paris is the largest city and capital of France, located in the north-central part of the country along the Seine River. It is also the country's major political, cultural, and economic center."
+        },
+        {
+            "id": "verb_002",
+            "input": "What is 15 multiplied by 8?",
+            "system_prompt": "Solve the arithmetic problem and provide the correct answer.",
+            "expected_output": "120",
+            "concise_answer": "15 × 8 = 120.",
+            "verbose_answer": "To calculate 15 multiplied by 8, multiply 15 by 8. This gives 120. Therefore, the correct answer is 120."
+        },
+        {
+            "id": "verb_003",
+            "input": "What is photosynthesis?",
+            "system_prompt": "Give a clear and concise definition.",
+            "expected_output": "Photosynthesis is the process by which plants use sunlight, water, and carbon dioxide to produce glucose and oxygen.",
+            "concise_answer": "Photosynthesis is the process by which plants use sunlight, water, and carbon dioxide to produce glucose and oxygen.",
+            "verbose_answer": "Photosynthesis is a biological process used by plants, algae, and some microorganisms to convert light energy into chemical energy. During the process, organisms use sunlight to drive reactions involving water and carbon dioxide, ultimately producing glucose as stored chemical energy and releasing oxygen as a by-product."
+        },
+        {
+            "id": "verb_004",
+            "input": "Give two benefits of regular exercise.",
+            "system_prompt": "Give exactly two benefits in a concise answer.",
+            "expected_output": "Regular exercise improves cardiovascular health and physical fitness.",
+            "concise_answer": "It improves cardiovascular health and physical fitness.",
+            "verbose_answer": "Regular exercise provides many health benefits. Two important benefits are that it improves cardiovascular health by supporting the heart and circulation, and it improves physical fitness by strengthening the body and increasing endurance."
+        },
+        {
+            "id": "verb_005",
+            "input": "What is the purpose of a database?",
+            "system_prompt": "Answer clearly and concisely.",
+            "expected_output": "A database stores, organizes, and retrieves data efficiently.",
+            "concise_answer": "A database stores, organizes, and retrieves data efficiently.",
+            "verbose_answer": "A database is a structured system used to store, organize, manage, and retrieve information efficiently. Databases allow applications and users to access stored information in an organized manner, perform searches and updates, and manage large amounts of data reliably."
+        }
+    ]
+}

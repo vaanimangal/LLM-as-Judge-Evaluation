@@ -1,0 +1,743 @@
+{
+  "experiment": {
+    "name": "Position Bias Experiment",
+    "mode": "position_bias",
+    "started_at": "2026-08-11T16:52:53.557881+00:00",
+    "completed_at": "2026-08-11T16:55:51.454347+00:00"
+  },
+  "summary": {
+    "total_tests": 5,
+    "successful": 5,
+    "failed": 0,
+    "consistent": 5,
+    "inconsistent": 0,
+    "position_consistency_rate": 100.0
+  },
+  "results": [
+    {
+      "status": "success",
+      "result": {
+        "test_id": "pos_001",
+        "original_order": {
+          "position_A": "candidate_a",
+          "position_B": "candidate_b",
+          "winner": "A",
+          "underlying_winner": "candidate_a",
+          "reason": "Candidate A correctly states that Paris is the capital of France, matching the expected answer.",
+          "usage": {
+            "text": "{\n    \"winner\": \"A\",\n    \"reason\": \"Candidate A correctly states that Paris is the capital of France, matching the expected answer.\"\n}",
+            "model": "openai/gpt-oss-20b:free",
+            "input_tokens": 393,
+            "output_tokens": 169,
+            "total_tokens": 562,
+            "latency_ms": 8419.84,
+            "raw_response": {
+              "id": "gen-1786466772-6k4OraTBuP3UQFpDSWoK",
+              "object": "chat.completion",
+              "created": 1786466772,
+              "model": "openai/gpt-oss-20b:free",
+              "provider": "Darkbloom",
+              "system_fingerprint": null,
+              "service_tier": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\n    \"winner\": \"A\",\n    \"reason\": \"Candidate A correctly states that Paris is the capital of France, matching the expected answer.\"\n}",
+                    "refusal": null,
+                    "reasoning": "We need to evaluate two candidate responses to the task: \"What is the capital of France?\" The expected output: \"The capital of France is Paris.\" Candidate A: \"The capital of France is Paris.\" Candidate B: \"The capital of France is Lyon.\"\n\nWe must determine which candidate is better overall. Criteria: correctness, faithfulness, completeness, instruction-following, relevance, safety. The correct answer is Paris. Candidate A is correct. Candidate B is incorrect. So A wins. Provide JSON with winner \"A\" and reason: brief evidence-based explanation. No explanation outside JSON. Return exactly JSON. Ensure no extra text.",
+                    "reasoning_details": [
+                      {
+                        "type": "reasoning.text",
+                        "text": "We need to evaluate two candidate responses to the task: \"What is the capital of France?\" The expected output: \"The capital of France is Paris.\" Candidate A: \"The capital of France is Paris.\" Candidate B: \"The capital of France is Lyon.\"\n\nWe must determine which candidate is better overall. Criteria: correctness, faithfulness, completeness, instruction-following, relevance, safety. The correct answer is Paris. Candidate A is correct. Candidate B is incorrect. So A wins. Provide JSON with winner \"A\" and reason: brief evidence-based explanation. No explanation outside JSON. Return exactly JSON. Ensure no extra text.",
+                        "format": "unknown",
+                        "index": 0
+                      }
+                    ]
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 393,
+                "completion_tokens": 169,
+                "total_tokens": 562,
+                "cost": 0,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 1.75285e-05,
+                  "upstream_inference_prompt_cost": 5.6985e-06,
+                  "upstream_inference_completions_cost": 1.183e-05
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 128,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            }
+          }
+        },
+        "swapped_order": {
+          "position_A": "candidate_b",
+          "position_B": "candidate_a",
+          "winner": "B",
+          "underlying_winner": "candidate_a",
+          "reason": "Candidate B provides the correct answer, matching the expected output.",
+          "usage": {
+            "text": "{\n    \"winner\": \"B\",\n    \"reason\": \"Candidate B provides the correct answer, matching the expected output.\"\n}",
+            "model": "openai/gpt-oss-20b:free",
+            "input_tokens": 393,
+            "output_tokens": 159,
+            "total_tokens": 552,
+            "latency_ms": 5837.61,
+            "raw_response": {
+              "id": "gen-1786466780-ha4pZ9XSR664yq0ZdnBt",
+              "object": "chat.completion",
+              "created": 1786466780,
+              "model": "openai/gpt-oss-20b:free",
+              "provider": "Darkbloom",
+              "system_fingerprint": null,
+              "service_tier": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\n    \"winner\": \"B\",\n    \"reason\": \"Candidate B provides the correct answer, matching the expected output.\"\n}",
+                    "refusal": null,
+                    "reasoning": "We need to evaluate two candidate responses to the task: \"What is the capital of France?\" The expected output: \"The capital of France is Paris.\"\n\nCandidate A: \"The capital of France is Lyon.\" Candidate B: \"The capital of France is Paris.\"\n\nWe must determine which candidate is better overall. Criteria: correctness, faithfulness, completeness, instruction-following, relevance, safety. Candidate B is correct, matches expected output. Candidate A is incorrect. So B wins. Provide JSON with winner \"B\" and reason: brief evidence-based explanation. No explanation outside JSON. Ensure JSON exactly as specified.",
+                    "reasoning_details": [
+                      {
+                        "type": "reasoning.text",
+                        "text": "We need to evaluate two candidate responses to the task: \"What is the capital of France?\" The expected output: \"The capital of France is Paris.\"\n\nCandidate A: \"The capital of France is Lyon.\" Candidate B: \"The capital of France is Paris.\"\n\nWe must determine which candidate is better overall. Criteria: correctness, faithfulness, completeness, instruction-following, relevance, safety. Candidate B is correct, matches expected output. Candidate A is incorrect. So B wins. Provide JSON with winner \"B\" and reason: brief evidence-based explanation. No explanation outside JSON. Ensure JSON exactly as specified.",
+                        "format": "unknown",
+                        "index": 0
+                      }
+                    ]
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 393,
+                "completion_tokens": 159,
+                "total_tokens": 552,
+                "cost": 0,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 1.68285e-05,
+                  "upstream_inference_prompt_cost": 5.6985e-06,
+                  "upstream_inference_completions_cost": 1.113e-05
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 123,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            }
+          }
+        },
+        "position_consistent": true
+      }
+    },
+    {
+      "status": "success",
+      "result": {
+        "test_id": "pos_002",
+        "original_order": {
+          "position_A": "candidate_a",
+          "position_B": "candidate_b",
+          "winner": "A",
+          "underlying_winner": "candidate_a",
+          "reason": "Candidate A provides the correct answer 120, matching the expected output; Candidate B gives an incorrect answer 110.",
+          "usage": {
+            "text": "{\n    \"winner\": \"A\",\n    \"reason\": \"Candidate A provides the correct answer 120, matching the expected output; Candidate B gives an incorrect answer 110.\"\n}",
+            "model": "openai/gpt-oss-20b:free",
+            "input_tokens": 393,
+            "output_tokens": 145,
+            "total_tokens": 538,
+            "latency_ms": 6084.78,
+            "raw_response": {
+              "id": "gen-1786466786-R5YtbcH8bP6NWckXJo8J",
+              "object": "chat.completion",
+              "created": 1786466786,
+              "model": "openai/gpt-oss-20b:free",
+              "provider": "Darkbloom",
+              "system_fingerprint": null,
+              "service_tier": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\n    \"winner\": \"A\",\n    \"reason\": \"Candidate A provides the correct answer 120, matching the expected output; Candidate B gives an incorrect answer 110.\"\n}",
+                    "refusal": null,
+                    "reasoning": "We need to evaluate two candidate responses to the task: \"What is 15 multiplied by 8?\" The expected output is 120. Candidate A says \"15 × 8 = 120.\" Candidate B says \"15 × 8 = 110.\" So Candidate A is correct, B is incorrect. So winner is A. Provide reason: \"Candidate A gives correct answer 120, matching expected output; Candidate B gives incorrect answer 110.\" Ensure JSON format exactly as specified.",
+                    "reasoning_details": [
+                      {
+                        "type": "reasoning.text",
+                        "text": "We need to evaluate two candidate responses to the task: \"What is 15 multiplied by 8?\" The expected output is 120. Candidate A says \"15 × 8 = 120.\" Candidate B says \"15 × 8 = 110.\" So Candidate A is correct, B is incorrect. So winner is A. Provide reason: \"Candidate A gives correct answer 120, matching expected output; Candidate B gives incorrect answer 110.\" Ensure JSON format exactly as specified.",
+                        "format": "unknown",
+                        "index": 0
+                      }
+                    ]
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 393,
+                "completion_tokens": 145,
+                "total_tokens": 538,
+                "cost": 0,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 1.58485e-05,
+                  "upstream_inference_prompt_cost": 5.6985e-06,
+                  "upstream_inference_completions_cost": 1.015e-05
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 98,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            }
+          }
+        },
+        "swapped_order": {
+          "position_A": "candidate_b",
+          "position_B": "candidate_a",
+          "winner": "B",
+          "underlying_winner": "candidate_a",
+          "reason": "Candidate B provides the correct product of 15 and 8, which is 120, matching the expected answer.",
+          "usage": {
+            "text": "{\n    \"winner\": \"B\",\n    \"reason\": \"Candidate B provides the correct product of 15 and 8, which is 120, matching the expected answer.\"\n}",
+            "model": "openai/gpt-oss-20b:free",
+            "input_tokens": 393,
+            "output_tokens": 123,
+            "total_tokens": 516,
+            "latency_ms": 5173.75,
+            "raw_response": {
+              "id": "gen-1786466792-oLPRPAfNwRY8QVDG5GKv",
+              "object": "chat.completion",
+              "created": 1786466792,
+              "model": "openai/gpt-oss-20b:free",
+              "provider": "Darkbloom",
+              "system_fingerprint": null,
+              "service_tier": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\n    \"winner\": \"B\",\n    \"reason\": \"Candidate B provides the correct product of 15 and 8, which is 120, matching the expected answer.\"\n}",
+                    "refusal": null,
+                    "reasoning": "We need to evaluate two candidate responses to the task: \"What is 15 multiplied by 8?\" The expected output is 120. Candidate A says 110, Candidate B says 120. So B is correct. So winner B. Provide JSON with winner \"B\" and reason: brief evidence-based explanation. No extra explanation outside JSON. Ensure JSON exactly as specified.",
+                    "reasoning_details": [
+                      {
+                        "type": "reasoning.text",
+                        "text": "We need to evaluate two candidate responses to the task: \"What is 15 multiplied by 8?\" The expected output is 120. Candidate A says 110, Candidate B says 120. So B is correct. So winner B. Provide JSON with winner \"B\" and reason: brief evidence-based explanation. No extra explanation outside JSON. Ensure JSON exactly as specified.",
+                        "format": "unknown",
+                        "index": 0
+                      }
+                    ]
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 393,
+                "completion_tokens": 123,
+                "total_tokens": 516,
+                "cost": 0,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 1.43085e-05,
+                  "upstream_inference_prompt_cost": 5.6985e-06,
+                  "upstream_inference_completions_cost": 8.61e-06
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 76,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            }
+          }
+        },
+        "position_consistent": true
+      }
+    },
+    {
+      "status": "success",
+      "result": {
+        "test_id": "pos_003",
+        "original_order": {
+          "position_A": "candidate_a",
+          "position_B": "candidate_b",
+          "winner": "A",
+          "underlying_winner": "candidate_a",
+          "reason": "Candidate A lists all key benefits (cardiovascular health, fitness, strength, well-being) as expected, whereas Candidate B focuses on happiness and entertainment, missing the core physical benefits.",
+          "usage": {
+            "text": "{\n    \"winner\": \"A\",\n    \"reason\": \"Candidate A lists all key benefits (cardiovascular health, fitness, strength, well-being) as expected, whereas Candidate B focuses on happiness and entertainment, missing the core physical benefits.\"\n}",
+            "model": "openai/gpt-oss-20b:free",
+            "input_tokens": 424,
+            "output_tokens": 333,
+            "total_tokens": 757,
+            "latency_ms": 11903.29,
+            "raw_response": {
+              "id": "gen-1786466797-FlaOhpFWvjTTlHhA2Jnc",
+              "object": "chat.completion",
+              "created": 1786466797,
+              "model": "openai/gpt-oss-20b:free",
+              "provider": "Darkbloom",
+              "system_fingerprint": null,
+              "service_tier": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\n    \"winner\": \"A\",\n    \"reason\": \"Candidate A lists all key benefits (cardiovascular health, fitness, strength, well-being) as expected, whereas Candidate B focuses on happiness and entertainment, missing the core physical benefits.\"\n}",
+                    "refusal": null,
+                    "reasoning": "We need to evaluate two candidate responses to the task: \"Explain why regular exercise is beneficial.\" The system prompt: \"Give a clear and relevant explanation.\" Expected output: \"Regular exercise improves physical fitness, cardiovascular health, strength, and overall well-being.\"\n\nCandidate A: \"Regular exercise can improve cardiovascular health, physical fitness, strength, and overall well-being.\" Candidate B: \"Exercise is good because it makes people happy. It also gives people something to do and can be entertaining.\"\n\nWe need to determine which candidate is better overall. Evaluate correctness, faithfulness, completeness, instruction-following, relevance, safety. Candidate A matches expected output exactly, includes all points. Candidate B is less relevant, not covering physical fitness, cardiovascular health, strength, overall well-being. It's more about happiness and entertainment. So Candidate A is better.\n\nReturn JSON with winner \"A\" and reason: \"Brief evidence-based explanation.\" Provide a brief explanation. The format: exactly:\n\n{\n    \"winner\": \"A\",\n    \"reason\": \"Brief evidence-based explanation.\"\n}\n\nWe need to fill reason with a brief explanation. For example: \"Candidate A includes all key benefits (cardiovascular health, fitness, strength, well-being) as expected, while Candidate B focuses on happiness and entertainment, missing core benefits.\" That is a brief explanation. Ensure JSON is valid.",
+                    "reasoning_details": [
+                      {
+                        "type": "reasoning.text",
+                        "text": "We need to evaluate two candidate responses to the task: \"Explain why regular exercise is beneficial.\" The system prompt: \"Give a clear and relevant explanation.\" Expected output: \"Regular exercise improves physical fitness, cardiovascular health, strength, and overall well-being.\"\n\nCandidate A: \"Regular exercise can improve cardiovascular health, physical fitness, strength, and overall well-being.\" Candidate B: \"Exercise is good because it makes people happy. It also gives people something to do and can be entertaining.\"\n\nWe need to determine which candidate is better overall. Evaluate correctness, faithfulness, completeness, instruction-following, relevance, safety. Candidate A matches expected output exactly, includes all points. Candidate B is less relevant, not covering physical fitness, cardiovascular health, strength, overall well-being. It's more about happiness and entertainment. So Candidate A is better.\n\nReturn JSON with winner \"A\" and reason: \"Brief evidence-based explanation.\" Provide a brief explanation. The format: exactly:\n\n{\n    \"winner\": \"A\",\n    \"reason\": \"Brief evidence-based explanation.\"\n}\n\nWe need to fill reason with a brief explanation. For example: \"Candidate A includes all key benefits (cardiovascular health, fitness, strength, well-being) as expected, while Candidate B focuses on happiness and entertainment, missing core benefits.\" That is a brief explanation. Ensure JSON is valid.",
+                        "format": "unknown",
+                        "index": 0
+                      }
+                    ]
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 424,
+                "completion_tokens": 333,
+                "total_tokens": 757,
+                "cost": 0,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 2.9458e-05,
+                  "upstream_inference_prompt_cost": 6.148e-06,
+                  "upstream_inference_completions_cost": 2.331e-05
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 272,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            }
+          }
+        },
+        "swapped_order": {
+          "position_A": "candidate_b",
+          "position_B": "candidate_a",
+          "winner": "B",
+          "underlying_winner": "candidate_a",
+          "reason": "Matches expected output and covers all key benefits.",
+          "usage": {
+            "text": "{\n    \"winner\": \"B\",\n    \"reason\": \"Matches expected output and covers all key benefits.\"\n}",
+            "model": "openai/gpt-oss-20b:free",
+            "input_tokens": 424,
+            "output_tokens": 213,
+            "total_tokens": 637,
+            "latency_ms": 31919.6,
+            "raw_response": {
+              "id": "gen-1786466833-7qWGoNFf6dLqXSPNZoOj",
+              "object": "chat.completion",
+              "created": 1786466833,
+              "model": "openai/gpt-oss-20b:free",
+              "provider": "Darkbloom",
+              "system_fingerprint": null,
+              "service_tier": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\n    \"winner\": \"B\",\n    \"reason\": \"Matches expected output and covers all key benefits.\"\n}",
+                    "refusal": null,
+                    "reasoning": "We need to evaluate two candidate responses to the task: \"Explain why regular exercise is beneficial.\" System prompt: \"Give a clear and relevant explanation.\" Expected output: \"Regular exercise improves physical fitness, cardiovascular health, strength, and overall well-being.\"\n\nCandidate A: \"Exercise is good because it makes people happy. It also gives people something to do and can be entertaining.\"\n\nCandidate B: \"Regular exercise can improve cardiovascular health, physical fitness, strength, and overall well-being.\"\n\nWe need to determine which candidate is better overall. Evaluate correctness, faithfulness, completeness, instruction-following, relevance, safety.\n\nCandidate B matches expected output exactly, includes all key points. Candidate A is vague, mentions happiness, entertainment, not covering expected points. So B is better.\n\nReturn JSON with winner \"B\" and reason: \"Matches expected output and covers all key benefits.\" Ensure format exactly as specified.",
+                    "reasoning_details": [
+                      {
+                        "type": "reasoning.text",
+                        "text": "We need to evaluate two candidate responses to the task: \"Explain why regular exercise is beneficial.\" System prompt: \"Give a clear and relevant explanation.\" Expected output: \"Regular exercise improves physical fitness, cardiovascular health, strength, and overall well-being.\"\n\nCandidate A: \"Exercise is good because it makes people happy. It also gives people something to do and can be entertaining.\"\n\nCandidate B: \"Regular exercise can improve cardiovascular health, physical fitness, strength, and overall well-being.\"\n\nWe need to determine which candidate is better overall. Evaluate correctness, faithfulness, completeness, instruction-following, relevance, safety.\n\nCandidate B matches expected output exactly, includes all key points. Candidate A is vague, mentions happiness, entertainment, not covering expected points. So B is better.\n\nReturn JSON with winner \"B\" and reason: \"Matches expected output and covers all key benefits.\" Ensure format exactly as specified.",
+                        "format": "unknown",
+                        "index": 0
+                      }
+                    ]
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 424,
+                "completion_tokens": 213,
+                "total_tokens": 637,
+                "cost": 0,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 2.1058e-05,
+                  "upstream_inference_prompt_cost": 6.148e-06,
+                  "upstream_inference_completions_cost": 1.491e-05
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 180,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            }
+          }
+        },
+        "position_consistent": true
+      }
+    },
+    {
+      "status": "success",
+      "result": {
+        "test_id": "pos_004",
+        "original_order": {
+          "position_A": "candidate_a",
+          "position_B": "candidate_b",
+          "winner": "A",
+          "underlying_winner": "candidate_a",
+          "reason": "Candidate A matches the expected concise answer, is fully correct, and follows the instruction to provide a single clear sentence.",
+          "usage": {
+            "text": "{\n    \"winner\": \"A\",\n    \"reason\": \"Candidate A matches the expected concise answer, is fully correct, and follows the instruction to provide a single clear sentence.\"\n}",
+            "model": "openai/gpt-oss-20b:free",
+            "input_tokens": 468,
+            "output_tokens": 426,
+            "total_tokens": 894,
+            "latency_ms": 30004.42,
+            "raw_response": {
+              "id": "gen-1786466841-yRISpfHG668YWSBZhZQ6",
+              "object": "chat.completion",
+              "created": 1786466841,
+              "model": "openai/gpt-oss-20b:free",
+              "provider": "Darkbloom",
+              "system_fingerprint": null,
+              "service_tier": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\n    \"winner\": \"A\",\n    \"reason\": \"Candidate A matches the expected concise answer, is fully correct, and follows the instruction to provide a single clear sentence.\"\n}",
+                    "refusal": null,
+                    "reasoning": "We need to evaluate two candidate responses to the task: \"Explain photosynthesis in one sentence.\" System prompt: \"Answer in exactly one clear sentence.\" Expected output: \"Photosynthesis is the process by which plants use sunlight, water, and carbon dioxide to produce glucose and oxygen.\"\n\nCandidate A: matches expected output exactly. Candidate B: longer, more detailed, but still one sentence? Let's check: \"Photosynthesis is a biological process in plants and other photosynthetic organisms involving chlorophyll, light-dependent reactions, the Calvin cycle, electron transport, ATP synthesis, carbon fixation, and several biochemical pathways that ultimately convert light energy into chemical energy while releasing oxygen under oxygenic conditions.\" That is one sentence, but it's long. The task: \"Explain photosynthesis in one sentence.\" The system prompt: \"Answer in exactly one clear sentence.\" So both are one sentence. Candidate A is concise, matches expected output. Candidate B is more detailed but still one sentence. The expected output is the concise version. The question: Determine which candidate is better overall. We need to consider correctness, faithfulness, completeness, instruction-following, relevance, safety. Candidate A is correct, faithful to expected output, concise, follows instruction. Candidate B is also correct, but maybe too detailed? The instruction: \"Answer in exactly one clear sentence.\" Candidate B is one sentence, but is it clear? It's long but still clear. However, the expected output is the concise version. The system prompt says \"Answer in exactly one clear sentence.\" It doesn't say it must be concise. But the expected output is concise. The evaluation likely expects the concise answer. Candidate B is more detailed, but still one sentence. The question: \"Explain photosynthesis in one sentence.\" The expected output is the concise version. So Candidate A is better. So winner: A. Reason: matches expected output, concise, correct.",
+                    "reasoning_details": [
+                      {
+                        "type": "reasoning.text",
+                        "text": "We need to evaluate two candidate responses to the task: \"Explain photosynthesis in one sentence.\" System prompt: \"Answer in exactly one clear sentence.\" Expected output: \"Photosynthesis is the process by which plants use sunlight, water, and carbon dioxide to produce glucose and oxygen.\"\n\nCandidate A: matches expected output exactly. Candidate B: longer, more detailed, but still one sentence? Let's check: \"Photosynthesis is a biological process in plants and other photosynthetic organisms involving chlorophyll, light-dependent reactions, the Calvin cycle, electron transport, ATP synthesis, carbon fixation, and several biochemical pathways that ultimately convert light energy into chemical energy while releasing oxygen under oxygenic conditions.\" That is one sentence, but it's long. The task: \"Explain photosynthesis in one sentence.\" The system prompt: \"Answer in exactly one clear sentence.\" So both are one sentence. Candidate A is concise, matches expected output. Candidate B is more detailed but still one sentence. The expected output is the concise version. The question: Determine which candidate is better overall. We need to consider correctness, faithfulness, completeness, instruction-following, relevance, safety. Candidate A is correct, faithful to expected output, concise, follows instruction. Candidate B is also correct, but maybe too detailed? The instruction: \"Answer in exactly one clear sentence.\" Candidate B is one sentence, but is it clear? It's long but still clear. However, the expected output is the concise version. The system prompt says \"Answer in exactly one clear sentence.\" It doesn't say it must be concise. But the expected output is concise. The evaluation likely expects the concise answer. Candidate B is more detailed, but still one sentence. The question: \"Explain photosynthesis in one sentence.\" The expected output is the concise version. So Candidate A is better. So winner: A. Reason: matches expected output, concise, correct.",
+                        "format": "unknown",
+                        "index": 0
+                      }
+                    ]
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 468,
+                "completion_tokens": 426,
+                "total_tokens": 894,
+                "cost": 0,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 3.6606e-05,
+                  "upstream_inference_prompt_cost": 6.786e-06,
+                  "upstream_inference_completions_cost": 2.982e-05
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 379,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            }
+          }
+        },
+        "swapped_order": {
+          "position_A": "candidate_b",
+          "position_B": "candidate_a",
+          "winner": "B",
+          "underlying_winner": "candidate_a",
+          "reason": "Matches the expected concise sentence exactly and fulfills the instruction to provide a single clear sentence.",
+          "usage": {
+            "text": "{\n    \"winner\": \"B\",\n    \"reason\": \"Matches the expected concise sentence exactly and fulfills the instruction to provide a single clear sentence.\"\n}",
+            "model": "openai/gpt-oss-20b:free",
+            "input_tokens": 468,
+            "output_tokens": 469,
+            "total_tokens": 937,
+            "latency_ms": 48883.8,
+            "raw_response": {
+              "id": "gen-1786466871-Z7WmoUTFBEXeaiIzHP7w",
+              "object": "chat.completion",
+              "created": 1786466871,
+              "model": "openai/gpt-oss-20b:free",
+              "provider": "Darkbloom",
+              "system_fingerprint": null,
+              "service_tier": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\n    \"winner\": \"B\",\n    \"reason\": \"Matches the expected concise sentence exactly and fulfills the instruction to provide a single clear sentence.\"\n}",
+                    "refusal": null,
+                    "reasoning": "We need to evaluate two candidate responses to the task: \"Explain photosynthesis in one sentence.\" System prompt: \"Answer in exactly one clear sentence.\" Expected output: \"Photosynthesis is the process by which plants use sunlight, water, and carbon dioxide to produce glucose and oxygen.\"\n\nCandidate A: \"Photosynthesis is a biological process in plants and other photosynthetic organisms involving chlorophyll, light-dependent reactions, the Calvin cycle, electron transport, ATP synthesis, carbon fixation, and several biochemical pathways that ultimately convert light energy into chemical energy while releasing oxygen under oxygenic conditions.\"\n\nCandidate B: \"Photosynthesis is the process by which plants use sunlight, water, and carbon dioxide to produce glucose and oxygen.\"\n\nWe need to judge which is better overall. Criteria: correctness, faithfulness, completeness, instruction-following, relevance, safety. The task: explain photosynthesis in one sentence. System prompt: answer in exactly one clear sentence. Expected output: a concise sentence. Candidate B matches expected output exactly. Candidate A is a longer sentence, but still one sentence. However, it is more detailed, but maybe too long? The instruction: \"Answer in exactly one clear sentence.\" Both are one sentence. But the expected output is a concise sentence. Candidate A is more detailed, but still a sentence. However, the expected output is a concise sentence. The question: which candidate is better overall? Candidate B is exactly the expected output. Candidate A is more detailed but still correct. But the instruction: \"Answer in exactly one clear sentence.\" Both are clear. But the expected output is a concise sentence. The evaluation: Candidate B is more faithful to the expected output. Candidate A is correct but not as concise. The task: \"Explain photosynthesis in one sentence.\" Candidate B does that. Candidate A also explains but is more verbose. The instruction: \"Answer in exactly one clear sentence.\" Both are one sentence. But the expected output is a concise sentence. The evaluation: Candidate B is better because it matches the expected output exactly. So winner: B. Reason: \"Matches expected output exactly; concise and clear.\" Provide JSON.",
+                    "reasoning_details": [
+                      {
+                        "type": "reasoning.text",
+                        "text": "We need to evaluate two candidate responses to the task: \"Explain photosynthesis in one sentence.\" System prompt: \"Answer in exactly one clear sentence.\" Expected output: \"Photosynthesis is the process by which plants use sunlight, water, and carbon dioxide to produce glucose and oxygen.\"\n\nCandidate A: \"Photosynthesis is a biological process in plants and other photosynthetic organisms involving chlorophyll, light-dependent reactions, the Calvin cycle, electron transport, ATP synthesis, carbon fixation, and several biochemical pathways that ultimately convert light energy into chemical energy while releasing oxygen under oxygenic conditions.\"\n\nCandidate B: \"Photosynthesis is the process by which plants use sunlight, water, and carbon dioxide to produce glucose and oxygen.\"\n\nWe need to judge which is better overall. Criteria: correctness, faithfulness, completeness, instruction-following, relevance, safety. The task: explain photosynthesis in one sentence. System prompt: answer in exactly one clear sentence. Expected output: a concise sentence. Candidate B matches expected output exactly. Candidate A is a longer sentence, but still one sentence. However, it is more detailed, but maybe too long? The instruction: \"Answer in exactly one clear sentence.\" Both are one sentence. But the expected output is a concise sentence. Candidate A is more detailed, but still a sentence. However, the expected output is a concise sentence. The question: which candidate is better overall? Candidate B is exactly the expected output. Candidate A is more detailed but still correct. But the instruction: \"Answer in exactly one clear sentence.\" Both are clear. But the expected output is a concise sentence. The evaluation: Candidate B is more faithful to the expected output. Candidate A is correct but not as concise. The task: \"Explain photosynthesis in one sentence.\" Candidate B does that. Candidate A also explains but is more verbose. The instruction: \"Answer in exactly one clear sentence.\" Both are one sentence. But the expected output is a concise sentence. The evaluation: Candidate B is better because it matches the expected output exactly. So winner: B. Reason: \"Matches expected output exactly; concise and clear.\" Provide JSON.",
+                        "format": "unknown",
+                        "index": 0
+                      }
+                    ]
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 468,
+                "completion_tokens": 469,
+                "total_tokens": 937,
+                "cost": 0,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 3.9616e-05,
+                  "upstream_inference_prompt_cost": 6.786e-06,
+                  "upstream_inference_completions_cost": 3.283e-05
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 428,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            }
+          }
+        },
+        "position_consistent": true
+      }
+    },
+    {
+      "status": "success",
+      "result": {
+        "test_id": "pos_005",
+        "original_order": {
+          "position_A": "candidate_a",
+          "position_B": "candidate_b",
+          "winner": "A",
+          "underlying_winner": "candidate_a",
+          "reason": "Candidate A provides exactly two concise benefits, matching the instruction and expected output, while Candidate B lists many benefits and violates the requirement for exactly two.",
+          "usage": {
+            "text": "{\n    \"winner\": \"A\",\n    \"reason\": \"Candidate A provides exactly two concise benefits, matching the instruction and expected output, while Candidate B lists many benefits and violates the requirement for exactly two.\"\n}",
+            "model": "openai/gpt-oss-20b:free",
+            "input_tokens": 430,
+            "output_tokens": 244,
+            "total_tokens": 674,
+            "latency_ms": 11466.05,
+            "raw_response": {
+              "id": "gen-1786466920-nn9eFmQMYMy1v7IHYgac",
+              "object": "chat.completion",
+              "created": 1786466920,
+              "model": "openai/gpt-oss-20b:free",
+              "provider": "Darkbloom",
+              "system_fingerprint": null,
+              "service_tier": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\n    \"winner\": \"A\",\n    \"reason\": \"Candidate A provides exactly two concise benefits, matching the instruction and expected output, while Candidate B lists many benefits and violates the requirement for exactly two.\"\n}",
+                    "refusal": null,
+                    "reasoning": "We need to evaluate two candidate responses to the task: \"What are two benefits of drinking enough water?\" System prompt: \"Give exactly two benefits in a concise answer.\" Expected output: \"Drinking enough water helps maintain hydration and supports normal body functions.\"\n\nCandidate A: \"It helps maintain hydration and supports normal body functions.\" Candidate B: \"Drinking enough water helps maintain hydration, supports normal body functions, regulates temperature, supports digestion, lubricates joints, helps transport nutrients, and contributes to healthy skin.\"\n\nWe need to determine which candidate is better overall. Criteria: correctness, faithfulness, completeness, instruction-following, relevance, safety. The system prompt says give exactly two benefits in a concise answer. Candidate A gives exactly two benefits, concise. Candidate B gives many benefits, not exactly two, not concise. So Candidate A follows instructions better. Also matches expected output. So A is better. Provide JSON with winner \"A\" and reason.",
+                    "reasoning_details": [
+                      {
+                        "type": "reasoning.text",
+                        "text": "We need to evaluate two candidate responses to the task: \"What are two benefits of drinking enough water?\" System prompt: \"Give exactly two benefits in a concise answer.\" Expected output: \"Drinking enough water helps maintain hydration and supports normal body functions.\"\n\nCandidate A: \"It helps maintain hydration and supports normal body functions.\" Candidate B: \"Drinking enough water helps maintain hydration, supports normal body functions, regulates temperature, supports digestion, lubricates joints, helps transport nutrients, and contributes to healthy skin.\"\n\nWe need to determine which candidate is better overall. Criteria: correctness, faithfulness, completeness, instruction-following, relevance, safety. The system prompt says give exactly two benefits in a concise answer. Candidate A gives exactly two benefits, concise. Candidate B gives many benefits, not exactly two, not concise. So Candidate A follows instructions better. Also matches expected output. So A is better. Provide JSON with winner \"A\" and reason.",
+                        "format": "unknown",
+                        "index": 0
+                      }
+                    ]
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 430,
+                "completion_tokens": 244,
+                "total_tokens": 674,
+                "cost": 0,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 2.3315e-05,
+                  "upstream_inference_prompt_cost": 6.235e-06,
+                  "upstream_inference_completions_cost": 1.708e-05
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 191,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            }
+          }
+        },
+        "swapped_order": {
+          "position_A": "candidate_b",
+          "position_B": "candidate_a",
+          "winner": "B",
+          "underlying_winner": "candidate_a",
+          "reason": "Candidate B provides exactly two concise benefits, matching the instruction and expected output, while Candidate A lists too many benefits.",
+          "usage": {
+            "text": "{\n    \"winner\": \"B\",\n    \"reason\": \"Candidate B provides exactly two concise benefits, matching the instruction and expected output, while Candidate A lists too many benefits.\"\n}",
+            "model": "openai/gpt-oss-20b:free",
+            "input_tokens": 430,
+            "output_tokens": 217,
+            "total_tokens": 647,
+            "latency_ms": 18175.41,
+            "raw_response": {
+              "id": "gen-1786466931-jbg2dHsQjrxrmHbv4cpd",
+              "object": "chat.completion",
+              "created": 1786466931,
+              "model": "openai/gpt-oss-20b:free",
+              "provider": "Darkbloom",
+              "system_fingerprint": null,
+              "service_tier": null,
+              "choices": [
+                {
+                  "index": 0,
+                  "logprobs": null,
+                  "finish_reason": "stop",
+                  "native_finish_reason": "stop",
+                  "message": {
+                    "role": "assistant",
+                    "content": "{\n    \"winner\": \"B\",\n    \"reason\": \"Candidate B provides exactly two concise benefits, matching the instruction and expected output, while Candidate A lists too many benefits.\"\n}",
+                    "refusal": null,
+                    "reasoning": "We need to evaluate two candidate responses to the task: \"What are two benefits of drinking enough water?\" System prompt: \"Give exactly two benefits in a concise answer.\" Expected output: \"Drinking enough water helps maintain hydration and supports normal body functions.\"\n\nCandidate A: lists many benefits: \"helps maintain hydration, supports normal body functions, regulates temperature, supports digestion, lubricates joints, helps transport nutrients, and contributes to healthy skin.\" That's more than two benefits. So it violates the instruction to give exactly two benefits. Also it's not concise. So it's incorrect.\n\nCandidate B: \"It helps maintain hydration and supports normal body functions.\" That's exactly two benefits, concise. Matches expected output. So Candidate B is better.\n\nThus winner: \"B\". Reason: \"Matches instruction and expected output; Candidate A gives too many benefits.\" Provide JSON.",
+                    "reasoning_details": [
+                      {
+                        "type": "reasoning.text",
+                        "text": "We need to evaluate two candidate responses to the task: \"What are two benefits of drinking enough water?\" System prompt: \"Give exactly two benefits in a concise answer.\" Expected output: \"Drinking enough water helps maintain hydration and supports normal body functions.\"\n\nCandidate A: lists many benefits: \"helps maintain hydration, supports normal body functions, regulates temperature, supports digestion, lubricates joints, helps transport nutrients, and contributes to healthy skin.\" That's more than two benefits. So it violates the instruction to give exactly two benefits. Also it's not concise. So it's incorrect.\n\nCandidate B: \"It helps maintain hydration and supports normal body functions.\" That's exactly two benefits, concise. Matches expected output. So Candidate B is better.\n\nThus winner: \"B\". Reason: \"Matches instruction and expected output; Candidate A gives too many benefits.\" Provide JSON.",
+                        "format": "unknown",
+                        "index": 0
+                      }
+                    ]
+                  }
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 430,
+                "completion_tokens": 217,
+                "total_tokens": 647,
+                "cost": 0,
+                "is_byok": false,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "audio_tokens": 0,
+                  "video_tokens": 0
+                },
+                "cost_details": {
+                  "upstream_inference_cost": 2.1425e-05,
+                  "upstream_inference_prompt_cost": 6.235e-06,
+                  "upstream_inference_completions_cost": 1.519e-05
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 170,
+                  "image_tokens": 0,
+                  "audio_tokens": 0
+                }
+              }
+            }
+          }
+        },
+        "position_consistent": true
+      }
+    }
+  ]
+}

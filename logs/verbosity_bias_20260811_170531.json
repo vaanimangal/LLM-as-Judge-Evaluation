@@ -1,0 +1,191 @@
+{
+  "experiment": {
+    "name": "LLM-as-Judge verbosity-bias experiment",
+    "mode": "verbosity_bias",
+    "started_at": "2026-08-11T17:02:09.894742+00:00",
+    "completed_at": "2026-08-11T17:05:31.857761+00:00"
+  },
+  "summary": {
+    "total_tests": 5,
+    "successful": 5,
+    "failed": 0,
+    "verbose_preference": 0,
+    "concise_preference": 4,
+    "neutral": 1,
+    "inconclusive": 0,
+    "consistent": 5,
+    "consistency_rate": 100.0
+  },
+  "results": [
+    {
+      "status": "success",
+      "test_id": "verb_001",
+      "normal_order": {
+        "candidate_a": "concise",
+        "candidate_b": "verbose",
+        "winner": "A",
+        "reason": "Candidate A provides the correct answer in a concise manner, directly fulfilling the system prompt. Candidate B adds unnecessary details, violating the conciseness requirement."
+      },
+      "swapped_order": {
+        "candidate_a": "verbose",
+        "candidate_b": "concise",
+        "winner": "B",
+        "reason": "Candidate B provides the correct answer in a concise manner, directly fulfilling the system prompt’s requirement for accuracy and brevity. Candidate A, while correct, adds unnecessary detail that violates the conciseness instruction."
+      },
+      "verbosity_preference": "concise",
+      "consistent": true,
+      "usage": {
+        "normal": {
+          "model": "openai/gpt-oss-20b:free",
+          "input_tokens": 479,
+          "output_tokens": 174,
+          "total_tokens": 653,
+          "latency_ms": 11803.65
+        },
+        "swapped": {
+          "model": "openai/gpt-oss-20b:free",
+          "input_tokens": 479,
+          "output_tokens": 195,
+          "total_tokens": 674,
+          "latency_ms": 31640.03
+        }
+      }
+    },
+    {
+      "status": "success",
+      "test_id": "verb_002",
+      "normal_order": {
+        "candidate_a": "concise",
+        "candidate_b": "verbose",
+        "winner": "TIE",
+        "reason": "Both candidates provide the correct answer 120 and fully satisfy the task without any errors or irrelevant content."
+      },
+      "swapped_order": {
+        "candidate_a": "verbose",
+        "candidate_b": "concise",
+        "winner": "TIE",
+        "reason": "Both candidates correctly solve the problem and provide the answer 120. Neither answer is required to be more detailed, so they are equally good."
+      },
+      "verbosity_preference": "neutral",
+      "consistent": true,
+      "usage": {
+        "normal": {
+          "model": "openai/gpt-oss-20b:free",
+          "input_tokens": 465,
+          "output_tokens": 296,
+          "total_tokens": 761,
+          "latency_ms": 12182.9
+        },
+        "swapped": {
+          "model": "openai/gpt-oss-20b:free",
+          "input_tokens": 465,
+          "output_tokens": 413,
+          "total_tokens": 878,
+          "latency_ms": 13599.17
+        }
+      }
+    },
+    {
+      "status": "success",
+      "test_id": "verb_003",
+      "normal_order": {
+        "candidate_a": "concise",
+        "candidate_b": "verbose",
+        "winner": "A",
+        "reason": "Candidate A provides a concise, accurate definition that directly satisfies the system prompt’s requirement for clarity and brevity, matching the expected output. Candidate B, while correct, adds unnecessary detail and length, violating the conciseness instruction."
+      },
+      "swapped_order": {
+        "candidate_a": "verbose",
+        "candidate_b": "concise",
+        "winner": "B",
+        "reason": "Candidate B provides a concise, accurate definition that matches the system prompt and expected output, while Candidate A adds unnecessary detail and length."
+      },
+      "verbosity_preference": "concise",
+      "consistent": true,
+      "usage": {
+        "normal": {
+          "model": "openai/gpt-oss-20b:free",
+          "input_tokens": 516,
+          "output_tokens": 228,
+          "total_tokens": 744,
+          "latency_ms": 19768.09
+        },
+        "swapped": {
+          "model": "openai/gpt-oss-20b:free",
+          "input_tokens": 516,
+          "output_tokens": 218,
+          "total_tokens": 734,
+          "latency_ms": 9017.69
+        }
+      }
+    },
+    {
+      "status": "success",
+      "test_id": "verb_004",
+      "normal_order": {
+        "candidate_a": "concise",
+        "candidate_b": "verbose",
+        "winner": "A",
+        "reason": "Candidate A gives exactly two benefits in a concise manner, fully satisfying the system prompt, whereas Candidate B is unnecessarily verbose and does not adhere to the conciseness requirement."
+      },
+      "swapped_order": {
+        "candidate_a": "verbose",
+        "candidate_b": "concise",
+        "winner": "B",
+        "reason": "Candidate B directly lists the two required benefits in a concise, single sentence, fully satisfying the system prompt. Candidate A adds extraneous context, violating the conciseness requirement."
+      },
+      "verbosity_preference": "concise",
+      "consistent": true,
+      "usage": {
+        "normal": {
+          "model": "openai/gpt-oss-20b:free",
+          "input_tokens": 475,
+          "output_tokens": 316,
+          "total_tokens": 791,
+          "latency_ms": 8701.04
+        },
+        "swapped": {
+          "model": "openai/gpt-oss-20b:free",
+          "input_tokens": 475,
+          "output_tokens": 316,
+          "total_tokens": 791,
+          "latency_ms": 70957.42
+        }
+      }
+    },
+    {
+      "status": "success",
+      "test_id": "verb_005",
+      "normal_order": {
+        "candidate_a": "concise",
+        "candidate_b": "verbose",
+        "winner": "A",
+        "reason": "Candidate A is concise, directly addresses the purpose of a database, and follows the system prompt to answer clearly and concisely. Candidate B, while correct, adds unnecessary detail that violates the conciseness requirement."
+      },
+      "swapped_order": {
+        "candidate_a": "verbose",
+        "candidate_b": "concise",
+        "winner": "B",
+        "reason": "Candidate B provides a concise, correct, and relevant answer that directly satisfies the system prompt to be clear and concise. Candidate A, while correct, adds unnecessary detail and is not concise."
+      },
+      "verbosity_preference": "concise",
+      "consistent": true,
+      "usage": {
+        "normal": {
+          "model": "openai/gpt-oss-20b:free",
+          "input_tokens": 490,
+          "output_tokens": 271,
+          "total_tokens": 761,
+          "latency_ms": 10749.69
+        },
+        "swapped": {
+          "model": "openai/gpt-oss-20b:free",
+          "input_tokens": 490,
+          "output_tokens": 247,
+          "total_tokens": 737,
+          "latency_ms": 13512.94
+        }
+      }
+    }
+  ]
+}
