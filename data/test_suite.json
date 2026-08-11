@@ -1,0 +1,79 @@
+{
+  "tests": [
+    {
+      "id": "qa_001",
+      "input": "What is the capital of France?",
+      "system_prompt": "Answer accurately and concisely.",
+      "model_output": "The capital of France is Paris.",
+      "expected_output": "Paris",
+      "criteria": [
+        "correctness",
+        "faithfulness",
+        "completeness",
+        "instruction_following",
+        "relevance",
+        "safety"
+      ]
+    },
+    {
+      "id": "qa_002",
+      "input": "What is 15 multiplied by 8?",
+      "system_prompt": "Answer accurately and show the calculation.",
+      "model_output": "15 * 8 = 110.",
+      "expected_output": "15 * 8 = 120.",
+      "criteria": [
+        "correctness",
+        "faithfulness",
+        "completeness",
+        "instruction_following",
+        "relevance",
+        "safety"
+      ]
+    },
+    {
+      "id": "qa_003",
+      "input": "Explain photosynthesis in one sentence.",
+      "system_prompt": "Answer in exactly one concise sentence.",
+      "model_output": "Photosynthesis is the process by which green plants use sunlight, water, and carbon dioxide to produce glucose and oxygen. It is essential for most life on Earth because it produces oxygen.",
+      "expected_output": "Photosynthesis is the process by which plants use sunlight, water, and carbon dioxide to produce glucose and oxygen.",
+      "criteria": [
+        "correctness",
+        "faithfulness",
+        "completeness",
+        "instruction_following",
+        "relevance",
+        "safety"
+      ]
+    },
+    {
+      "id": "qa_004",
+      "input": "What are the main benefits of regular exercise?",
+      "system_prompt": "Provide a concise list of the main benefits.",
+      "model_output": "Regular exercise improves cardiovascular health and helps maintain a healthy weight.",
+      "expected_output": "Regular exercise improves cardiovascular health, physical fitness, mental well-being, weight management, and sleep.",
+      "criteria": [
+        "correctness",
+        "faithfulness",
+        "completeness",
+        "instruction_following",
+        "relevance",
+        "safety"
+      ]
+    },
+    {
+      "id": "qa_005",
+      "input": "Why should passwords not be shared with other people?",
+      "system_prompt": "Give a clear and safety-conscious explanation.",
+      "model_output": "Passwords should not be shared because another person could misuse the account, expose private information, or compromise account security.",
+      "expected_output": "Passwords should be kept private because sharing them can allow unauthorized access, data exposure, and account compromise.",
+      "criteria": [
+        "correctness",
+        "faithfulness",
+        "completeness",
+        "instruction_following",
+        "relevance",
+        "safety"
+      ]
+    }
+  ]
+}

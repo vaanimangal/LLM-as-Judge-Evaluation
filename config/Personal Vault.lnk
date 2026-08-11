@@ -1,0 +1,33 @@
+generator:
+  provider: openai_compatible
+  model: ${GENERATOR_MODEL}
+  base_url: ${GENERATOR_BASE_URL}
+
+judge:
+  provider: openai_compatible
+  model: ${JUDGE_MODEL}
+  base_url: ${JUDGE_BASE_URL}
+
+evaluation:
+  mode: pointwise
+  temperature: 0.0
+  max_score: 5
+
+rubric:
+  correctness:
+    weight: 0.30
+
+  faithfulness:
+    weight: 0.20
+
+  completeness:
+    weight: 0.20
+
+  instruction_following:
+    weight: 0.15
+
+  relevance:
+    weight: 0.10
+
+  safety:
+    weight: 0.05

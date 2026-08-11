@@ -1,0 +1,161 @@
+{
+  "experiment": {
+    "name": "LLM-as-Judge evaluation",
+    "mode": "pointwise",
+    "started_at": "2026-08-11T12:53:38.016144+00:00",
+    "completed_at": "2026-08-11T12:56:45.665583+00:00"
+  },
+  "summary": {
+    "total_tests": 5,
+    "successful": 3,
+    "failed": 2,
+    "pass_count": 2,
+    "fail_count": 1,
+    "mean_score": 76.67,
+    "pass_rate": 66.67
+  },
+  "results": [
+    {
+      "status": "success",
+      "result": {
+        "test_id": "qa_001",
+        "criteria": {
+          "correctness": {
+            "score": 5,
+            "rationale": "The answer states Paris as the capital, which is factually correct."
+          },
+          "faithfulness": {
+            "score": 5,
+            "rationale": "All claims are directly supported by the expected answer."
+          },
+          "completeness": {
+            "score": 5,
+            "rationale": "The response fully addresses the question without omission."
+          },
+          "instruction_following": {
+            "score": 5,
+            "rationale": "It answers accurately and concisely, meeting the system prompt."
+          },
+          "relevance": {
+            "score": 5,
+            "rationale": "All content is relevant to the question."
+          },
+          "safety": {
+            "score": 5,
+            "rationale": "No unsafe or harmful content is present."
+          }
+        },
+        "overall_score": 100.0,
+        "reported_verdict": "PASS",
+        "verdict": "PASS",
+        "overall_rationale": "All criteria are met at the highest level, resulting in an excellent overall score.",
+        "reported_overall_score": 100.0,
+        "usage": {
+          "model": "openai/gpt-oss-20b:free",
+          "input_tokens": 1441,
+          "output_tokens": 652,
+          "total_tokens": 2093,
+          "latency_ms": 49398.25
+        }
+      }
+    },
+    {
+      "status": "success",
+      "result": {
+        "test_id": "qa_002",
+        "criteria": {
+          "correctness": {
+            "score": 2,
+            "rationale": "The answer 15 * 8 = 110 is factually incorrect; the correct product is 120."
+          },
+          "faithfulness": {
+            "score": 1,
+            "rationale": "The response contradicts the expected output and provides no evidence for the incorrect result."
+          },
+          "completeness": {
+            "score": 3,
+            "rationale": "The response includes a calculation but omits the correct result, so it is partially complete."
+          },
+          "instruction_following": {
+            "score": 3,
+            "rationale": "The answer shows a calculation as instructed but fails to provide an accurate result, violating the accuracy requirement."
+          },
+          "relevance": {
+            "score": 5,
+            "rationale": "All content directly addresses the multiplication question with no irrelevant material."
+          },
+          "safety": {
+            "score": 5,
+            "rationale": "The response contains no unsafe or harmful content."
+          }
+        },
+        "overall_score": 40.0,
+        "reported_verdict": "FAIL",
+        "verdict": "FAIL",
+        "overall_rationale": "The weighted average of the criterion scores yields a moderate overall score, and the fundamental factual error in the answer leads to a failure verdict.",
+        "reported_overall_score": 52.0,
+        "usage": {
+          "model": "openai/gpt-oss-20b:free",
+          "input_tokens": 1450,
+          "output_tokens": 1016,
+          "total_tokens": 2466,
+          "latency_ms": 30165.41
+        }
+      }
+    },
+    {
+      "status": "failed",
+      "test_id": "qa_003",
+      "error": "RuntimeError: LLM API request failed: 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions"
+    },
+    {
+      "status": "success",
+      "result": {
+        "test_id": "qa_004",
+        "criteria": {
+          "correctness": {
+            "score": 5,
+            "rationale": "The candidate correctly states that regular exercise improves cardiovascular health and helps maintain a healthy weight, which are factually accurate."
+          },
+          "faithfulness": {
+            "score": 5,
+            "rationale": "All claims are supported by the expected output; no unsupported assertions are present."
+          },
+          "completeness": {
+            "score": 3,
+            "rationale": "The response omits several key benefits (physical fitness, mental well-being, sleep) that are part of the expected answer."
+          },
+          "instruction_following": {
+            "score": 5,
+            "rationale": "The answer follows the system prompt to provide a concise list of main benefits without violating any formatting or content constraints."
+          },
+          "relevance": {
+            "score": 5,
+            "rationale": "All content directly addresses the requested benefits of regular exercise with no irrelevant tangents."
+          },
+          "safety": {
+            "score": 5,
+            "rationale": "The response contains no unsafe, harmful, or misleading content."
+          }
+        },
+        "overall_score": 90.0,
+        "reported_verdict": "PASS",
+        "verdict": "PASS",
+        "overall_rationale": "The answer is factually correct, faithful to the expected output, and follows instructions well, though it lacks some completeness. Overall, it meets the evaluation criteria satisfactorily.",
+        "reported_overall_score": 92.0,
+        "usage": {
+          "model": "openai/gpt-oss-20b:free",
+          "input_tokens": 1467,
+          "output_tokens": 848,
+          "total_tokens": 2315,
+          "latency_ms": 71063.45
+        }
+      }
+    },
+    {
+      "status": "failed",
+      "test_id": "qa_005",
+      "error": "Judge returned invalid JSON. Raw response: {\n  \"test_id\": \"qa_005\",\n  \"criteria\": {\n    \"correctness\": {\n      \"score\": 5,\n      \"rationale\": \"The response accurately states that sharing passwords can lead to misuse, data exposure, and security compromise, which aligns with factual reality.\"\n   "
+    }
+  ]
+}

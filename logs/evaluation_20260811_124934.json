@@ -1,0 +1,161 @@
+{
+  "experiment": {
+    "name": "LLM-as-Judge evaluation",
+    "mode": "pointwise",
+    "started_at": "2026-08-11T12:47:07.464170+00:00",
+    "completed_at": "2026-08-11T12:49:34.110530+00:00"
+  },
+  "summary": {
+    "total_tests": 5,
+    "successful": 3,
+    "failed": 2,
+    "pass_count": 1,
+    "fail_count": 2,
+    "mean_score": 90.0,
+    "pass_rate": 33.33
+  },
+  "results": [
+    {
+      "status": "success",
+      "result": {
+        "test_id": "qa_001",
+        "criteria": {
+          "correctness": {
+            "score": 5,
+            "rationale": "The response correctly identifies Paris as the capital of France, which is factually accurate and matches the expected output."
+          },
+          "faithfulness": {
+            "score": 5,
+            "rationale": "The claim is fully supported by the expected output and general knowledge; no unsupported assertions are made."
+          },
+          "completeness": {
+            "score": 5,
+            "rationale": "The response fully addresses the question by providing the capital of France without omitting any necessary information."
+          },
+          "instruction_following": {
+            "score": 5,
+            "rationale": "The system prompt asks for an accurate and concise answer, and the response is both accurate and concise."
+          },
+          "relevance": {
+            "score": 5,
+            "rationale": "The response is directly focused on the requested task with no irrelevant or tangential content."
+          },
+          "safety": {
+            "score": 5,
+            "rationale": "The response contains no unsafe, harmful, or misleading content."
+          }
+        },
+        "overall_score": 100.0,
+        "reported_verdict": "PASS",
+        "verdict": "PASS",
+        "overall_rationale": "The response is factually correct, concise, complete, and fully aligned with the task and system prompt, with no safety concerns.",
+        "reported_overall_score": 100.0,
+        "usage": {
+          "model": "poolside/laguna-s-2.1:free",
+          "input_tokens": 1532,
+          "output_tokens": 339,
+          "total_tokens": 1871,
+          "latency_ms": 18579.97
+        }
+      }
+    },
+    {
+      "status": "failed",
+      "test_id": "qa_002",
+      "error": "Judge returned invalid JSON. Raw response: User Safety: safe"
+    },
+    {
+      "status": "success",
+      "result": {
+        "test_id": "qa_003",
+        "criteria": {
+          "correctness": {
+            "score": 5,
+            "rationale": "The response is factually correct; it accurately describes photosynthesis and adds a true statement about its importance."
+          },
+          "faithfulness": {
+            "score": 4,
+            "rationale": "The core description matches the expected output; the additional claim about being essential for most life on Earth is not supported by the provided reference."
+          },
+          "completeness": {
+            "score": 5,
+            "rationale": "The response fully explains photosynthesis, covering all required aspects without omission."
+          },
+          "instruction_following": {
+            "score": 3,
+            "rationale": "While it explains photosynthesis, it violates the explicit constraint of providing exactly one sentence by delivering two sentences."
+          },
+          "relevance": {
+            "score": 4,
+            "rationale": "The content is largely relevant to photosynthesis; the extra sentence adds minor unnecessary information."
+          },
+          "safety": {
+            "score": 5,
+            "rationale": "The response contains no unsafe, harmful, or misleading content."
+          }
+        },
+        "overall_score": 85.0,
+        "reported_verdict": "FAIL",
+        "verdict": "FAIL",
+        "overall_rationale": "Although factually correct and mostly faithful, the response fails to follow the one-sentence instruction, which is a substantive requirement of the task.",
+        "reported_overall_score": 88.0,
+        "usage": {
+          "model": "nvidia/nemotron-3-super-120b-a12b:free",
+          "input_tokens": 1522,
+          "output_tokens": 1795,
+          "total_tokens": 3317,
+          "latency_ms": 70959.85
+        }
+      }
+    },
+    {
+      "status": "success",
+      "result": {
+        "test_id": "qa_004",
+        "criteria": {
+          "correctness": {
+            "score": 5,
+            "rationale": "Both benefits mentioned (cardiovascular health and weight management) are factually correct."
+          },
+          "faithfulness": {
+            "score": 5,
+            "rationale": "All claims are directly supported by the expected output; no unsupported assertions."
+          },
+          "completeness": {
+            "score": 2,
+            "rationale": "Only two of the five key benefits are listed; major omissions of physical fitness, mental well‑being, and sleep."
+          },
+          "instruction_following": {
+            "score": 5,
+            "rationale": "Provides a concise answer that meets the system prompt's request for a concise list."
+          },
+          "relevance": {
+            "score": 5,
+            "rationale": "The response directly addresses the question about the main benefits of regular exercise."
+          },
+          "safety": {
+            "score": 5,
+            "rationale": "No unsafe, harmful, or misleading content is present."
+          }
+        },
+        "overall_score": 85.0,
+        "reported_verdict": "FAIL",
+        "verdict": "FAIL",
+        "overall_rationale": "The response is factually correct and faithful but fails to include most of the main benefits, making it incomplete and thus not fully acceptable.",
+        "reported_overall_score": 88.0,
+        "usage": {
+          "model": "cohere/north-mini-code:free",
+          "input_tokens": 1368,
+          "output_tokens": 1749,
+          "total_tokens": 3117,
+          "latency_ms": 50845.9
+        }
+      }
+    },
+    {
+      "status": "failed",
+      "test_id": "qa_005",
+      "error": "Judge returned invalid JSON. Raw response: User Safety: safe"
+    }
+  ]
+}
