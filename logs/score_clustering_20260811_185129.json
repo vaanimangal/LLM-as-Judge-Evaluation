@@ -1,0 +1,83 @@
+{
+  "experiment": {
+    "name": "Score-clustering experiment",
+    "mode": "score_clustering",
+    "started_at": "2026-08-11T18:49:00.799302+00:00",
+    "completed_at": "2026-08-11T18:51:29.051005+00:00"
+  },
+  "summary": {
+    "total_tests": 10,
+    "successful": 0,
+    "failed": 10,
+    "total_criterion_scores": 0,
+    "clustered": false
+  },
+  "score_analysis": {
+    "total_scores": 0,
+    "distribution": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0
+    },
+    "mean": null,
+    "standard_deviation": null,
+    "dominant_score": null,
+    "dominant_score_count": 0,
+    "dominant_score_percentage": null,
+    "clustered": false
+  },
+  "results": [
+    {
+      "status": "failed",
+      "test_id": "cluster_001",
+      "error": "RuntimeError: LLM API request failed after 3 retries: 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions"
+    },
+    {
+      "status": "failed",
+      "test_id": "cluster_002",
+      "error": "RuntimeError: LLM API request failed after 3 retries: 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions"
+    },
+    {
+      "status": "failed",
+      "test_id": "cluster_003",
+      "error": "RuntimeError: LLM API request failed after 3 retries: 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions"
+    },
+    {
+      "status": "failed",
+      "test_id": "cluster_004",
+      "error": "RuntimeError: LLM API request failed after 3 retries: 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions"
+    },
+    {
+      "status": "failed",
+      "test_id": "cluster_005",
+      "error": "RuntimeError: LLM API request failed after 3 retries: 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions"
+    },
+    {
+      "status": "failed",
+      "test_id": "cluster_006",
+      "error": "RuntimeError: LLM API request failed after 3 retries: 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions"
+    },
+    {
+      "status": "failed",
+      "test_id": "cluster_007",
+      "error": "RuntimeError: LLM API request failed after 3 retries: 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions"
+    },
+    {
+      "status": "failed",
+      "test_id": "cluster_008",
+      "error": "RuntimeError: LLM API request failed after 3 retries: 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions"
+    },
+    {
+      "status": "failed",
+      "test_id": "cluster_009",
+      "error": "RuntimeError: LLM API request failed after 3 retries: 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions"
+    },
+    {
+      "status": "failed",
+      "test_id": "cluster_010",
+      "error": "RuntimeError: LLM API request failed after 3 retries: 429 Client Error: Too Many Requests for url: https://openrouter.ai/api/v1/chat/completions"
+    }
+  ]
+}

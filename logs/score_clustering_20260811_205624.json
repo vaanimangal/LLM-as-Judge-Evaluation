@@ -1,0 +1,434 @@
+{
+  "experiment": {
+    "name": "Score-clustering experiment",
+    "mode": "score_clustering",
+    "started_at": "2026-08-11T20:55:28.998929+00:00",
+    "completed_at": "2026-08-11T20:56:24.190115+00:00"
+  },
+  "summary": {
+    "total_tests": 10,
+    "successful": 9,
+    "failed": 1,
+    "total_criterion_scores": 54,
+    "clustered": true
+  },
+  "score_analysis": {
+    "total_scores": 54,
+    "distribution": {
+      "1": 2,
+      "2": 0,
+      "3": 1,
+      "4": 0,
+      "5": 51
+    },
+    "mean": 4.8148,
+    "standard_deviation": 0.7952,
+    "dominant_score": 5,
+    "dominant_score_count": 51,
+    "dominant_score_percentage": 94.44,
+    "clustered": true
+  },
+  "results": [
+    {
+      "status": "success",
+      "result": {
+        "test_id": "cluster_001",
+        "criteria": {
+          "correctness": {
+            "score": 5,
+            "rationale": "The candidate response correctly identifies Paris as the capital of France."
+          },
+          "faithfulness": {
+            "score": 5,
+            "rationale": "The claim is fully supported by accurate factual knowledge and matches the expected output."
+          },
+          "completeness": {
+            "score": 5,
+            "rationale": "The answer fully addresses the input question without omitting any details."
+          },
+          "instruction_following": {
+            "score": 5,
+            "rationale": "The response is accurate and concise, adhering perfectly to the system prompt and input request."
+          },
+          "relevance": {
+            "score": 5,
+            "rationale": "The response directly answers the query without any extraneous or off-topic information."
+          },
+          "safety": {
+            "score": 5,
+            "rationale": "The response is completely benign and safe."
+          }
+        },
+        "overall_score": 100.0,
+        "reported_verdict": "PASS",
+        "verdict": "PASS",
+        "overall_rationale": "The response is completely accurate, concise, safe, and identical to the expected output.",
+        "reported_overall_score": 100.0,
+        "usage": {
+          "model": "gemini-3.6-flash",
+          "input_tokens": 1538,
+          "output_tokens": 304,
+          "total_tokens": 2278,
+          "latency_ms": 6029.1
+        }
+      }
+    },
+    {
+      "status": "success",
+      "result": {
+        "test_id": "cluster_002",
+        "criteria": {
+          "correctness": {
+            "score": 1,
+            "rationale": "15 multiplied by 8 is 120, but the candidate output incorrectly states it is 110."
+          },
+          "faithfulness": {
+            "score": 1,
+            "rationale": "The candidate's claim directly contradicts the expected answer/reference standard of 120."
+          },
+          "completeness": {
+            "score": 5,
+            "rationale": "The response attempts to answer the prompt in full without omitting any requested part."
+          },
+          "instruction_following": {
+            "score": 3,
+            "rationale": "The candidate attempted the arithmetic problem, but failed to adhere to the system prompt instruction to solve it 'correctly'."
+          },
+          "relevance": {
+            "score": 5,
+            "rationale": "The response is direct and contains no irrelevant or extraneous material."
+          },
+          "safety": {
+            "score": 5,
+            "rationale": "The response contains no unsafe or harmful content."
+          }
+        },
+        "overall_score": 42.5,
+        "reported_verdict": "FAIL",
+        "verdict": "FAIL",
+        "overall_rationale": "The candidate output failed the core requirement of the arithmetic task by giving an incorrect result (110 instead of 120).",
+        "reported_overall_score": 54.0,
+        "usage": {
+          "model": "gemini-3.6-flash",
+          "input_tokens": 1542,
+          "output_tokens": 337,
+          "total_tokens": 3034,
+          "latency_ms": 8535.65
+        }
+      }
+    },
+    {
+      "status": "success",
+      "result": {
+        "test_id": "cluster_003",
+        "criteria": {
+          "correctness": {
+            "score": 5,
+            "rationale": "The output is completely accurate and contains no factual or logical errors."
+          },
+          "faithfulness": {
+            "score": 5,
+            "rationale": "The output matches the reference answer verbatim and is entirely supported."
+          },
+          "completeness": {
+            "score": 5,
+            "rationale": "The response completely covers all core aspects of photosynthesis required by the prompt."
+          },
+          "instruction_following": {
+            "score": 5,
+            "rationale": "The candidate strictly follows the instruction to provide exactly one clear sentence."
+          },
+          "relevance": {
+            "score": 5,
+            "rationale": "The response directly addresses the prompt without any tangential or unnecessary information."
+          },
+          "safety": {
+            "score": 5,
+            "rationale": "The content is completely safe and appropriate."
+          }
+        },
+        "overall_score": 100.0,
+        "reported_verdict": "PASS",
+        "verdict": "PASS",
+        "overall_rationale": "The candidate response matches the reference output word-for-word, fully adhering to all instructions, factual requirements, and constraints.",
+        "reported_overall_score": 100.0,
+        "usage": {
+          "model": "gemini-3.6-flash",
+          "input_tokens": 1569,
+          "output_tokens": 306,
+          "total_tokens": 2260,
+          "latency_ms": 4667.59
+        }
+      }
+    },
+    {
+      "status": "failed",
+      "test_id": "cluster_004",
+      "error": "Judge returned invalid JSON. Raw response: {\n  \"test_id\": \"cluster_004\",\n  \"criteria\": {\n    \"correctness\": {\n      \"score\": 5,\n      \"rationale\": \"All listed benefits of drinking water are factually accurate.\"\n"
+    },
+    {
+      "status": "success",
+      "result": {
+        "test_id": "cluster_005",
+        "criteria": {
+          "correctness": {
+            "score": 5,
+            "rationale": "The candidate response is factually accurate and directly states key health benefits of exercise."
+          },
+          "faithfulness": {
+            "score": 5,
+            "rationale": "All claims made in the response match the expected output and standard factual evidence regarding exercise benefits."
+          },
+          "completeness": {
+            "score": 5,
+            "rationale": "The candidate response addresses all key aspects required by the task and expected output."
+          },
+          "instruction_following": {
+            "score": 5,
+            "rationale": "The candidate followed the system prompt by giving a clear, direct, and relevant explanation."
+          },
+          "relevance": {
+            "score": 5,
+            "rationale": "The response is fully focused on the task with zero irrelevant or tangential details."
+          },
+          "safety": {
+            "score": 5,
+            "rationale": "The content is safe, benign, and helpful health information."
+          }
+        },
+        "overall_score": 100.0,
+        "reported_verdict": "PASS",
+        "verdict": "PASS",
+        "overall_rationale": "The candidate response is concise, accurate, fully addresses the prompt, and perfectly matches the semantic content of the expected output.",
+        "reported_overall_score": 100.0,
+        "usage": {
+          "model": "gemini-3.6-flash",
+          "input_tokens": 1560,
+          "output_tokens": 325,
+          "total_tokens": 2306,
+          "latency_ms": 5927.93
+        }
+      }
+    },
+    {
+      "status": "success",
+      "result": {
+        "test_id": "cluster_006",
+        "criteria": {
+          "correctness": {
+            "score": 5,
+            "rationale": "The candidate response correctly identifies Jupiter as the largest planet in our solar system."
+          },
+          "faithfulness": {
+            "score": 5,
+            "rationale": "The response matches the expected factual content perfectly."
+          },
+          "completeness": {
+            "score": 5,
+            "rationale": "The prompt is fully answered without omitting any detail."
+          },
+          "instruction_following": {
+            "score": 5,
+            "rationale": "The response adheres to the system prompt and directly answers the task input."
+          },
+          "relevance": {
+            "score": 5,
+            "rationale": "The response is completely on-topic and contains no unnecessary information."
+          },
+          "safety": {
+            "score": 5,
+            "rationale": "The output contains no unsafe or harmful content."
+          }
+        },
+        "overall_score": 100.0,
+        "reported_verdict": "PASS",
+        "verdict": "PASS",
+        "overall_rationale": "The candidate response is completely accurate, concise, faithful to facts, and perfectly matches the expected output.",
+        "reported_overall_score": 100.0,
+        "usage": {
+          "model": "gemini-3.6-flash",
+          "input_tokens": 1545,
+          "output_tokens": 298,
+          "total_tokens": 2147,
+          "latency_ms": 4788.57
+        }
+      }
+    },
+    {
+      "status": "success",
+      "result": {
+        "test_id": "cluster_007",
+        "criteria": {
+          "correctness": {
+            "score": 5,
+            "rationale": "The candidate provided the exact correct sum of 17 + 25, which is 42."
+          },
+          "faithfulness": {
+            "score": 5,
+            "rationale": "The response is entirely supported by factual mathematical logic and matches the expected output."
+          },
+          "completeness": {
+            "score": 5,
+            "rationale": "The response fully answers the question with no missing details."
+          },
+          "instruction_following": {
+            "score": 5,
+            "rationale": "The candidate followed the prompt and system instructions to provide the correct numerical answer."
+          },
+          "relevance": {
+            "score": 5,
+            "rationale": "The response directly answers the user query without extraneous text."
+          },
+          "safety": {
+            "score": 5,
+            "rationale": "The content is completely safe and free of any harmful material."
+          }
+        },
+        "overall_score": 100.0,
+        "reported_verdict": "PASS",
+        "verdict": "PASS",
+        "overall_rationale": "The candidate provided the exact, correct numerical answer required by the task and followed all prompt instructions perfectly.",
+        "reported_overall_score": 100.0,
+        "usage": {
+          "model": "gemini-3.6-flash",
+          "input_tokens": 1534,
+          "output_tokens": 314,
+          "total_tokens": 2114,
+          "latency_ms": 4216.14
+        }
+      }
+    },
+    {
+      "status": "success",
+      "result": {
+        "test_id": "cluster_008",
+        "criteria": {
+          "correctness": {
+            "score": 5,
+            "rationale": "The candidate response provides a perfectly accurate and clear definition of machine learning."
+          },
+          "faithfulness": {
+            "score": 5,
+            "rationale": "The candidate response aligns exactly with the reference/expected output."
+          },
+          "completeness": {
+            "score": 5,
+            "rationale": "The definition includes all key aspects: field of AI, learning patterns from data, and making predictions or decisions."
+          },
+          "instruction_following": {
+            "score": 5,
+            "rationale": "The response strictly follows the prompt instructions by providing a concise definition."
+          },
+          "relevance": {
+            "score": 5,
+            "rationale": "The output is completely focused on the prompt without any unnecessary fluff."
+          },
+          "safety": {
+            "score": 5,
+            "rationale": "The content is entirely benign and safe."
+          }
+        },
+        "overall_score": 100.0,
+        "reported_verdict": "PASS",
+        "verdict": "PASS",
+        "overall_rationale": "The candidate response matches the expected output word for word, perfectly satisfying all criteria.",
+        "reported_overall_score": 100.0,
+        "usage": {
+          "model": "gemini-3.6-flash",
+          "input_tokens": 1567,
+          "output_tokens": 305,
+          "total_tokens": 2082,
+          "latency_ms": 3272.74
+        }
+      }
+    },
+    {
+      "status": "success",
+      "result": {
+        "test_id": "cluster_009",
+        "criteria": {
+          "correctness": {
+            "score": 5,
+            "rationale": "Solar energy is factually a renewable energy source."
+          },
+          "faithfulness": {
+            "score": 5,
+            "rationale": "The response perfectly aligns with the reference answer and factual evidence."
+          },
+          "completeness": {
+            "score": 5,
+            "rationale": "The response fully satisfies the task requirement by naming one renewable energy source."
+          },
+          "instruction_following": {
+            "score": 5,
+            "rationale": "The response strictly adheres to the prompt constraint of giving exactly one example."
+          },
+          "relevance": {
+            "score": 5,
+            "rationale": "The output is completely on-topic without any unnecessary details."
+          },
+          "safety": {
+            "score": 5,
+            "rationale": "The response is benign and presents no safety concerns."
+          }
+        },
+        "overall_score": 100.0,
+        "reported_verdict": "PASS",
+        "verdict": "PASS",
+        "overall_rationale": "The candidate response is perfectly accurate, concise, and fully complies with all system and task instructions.",
+        "reported_overall_score": 100.0,
+        "usage": {
+          "model": "gemini-3.6-flash",
+          "input_tokens": 1529,
+          "output_tokens": 299,
+          "total_tokens": 2185,
+          "latency_ms": 4500.0
+        }
+      }
+    },
+    {
+      "status": "success",
+      "result": {
+        "test_id": "cluster_010",
+        "criteria": {
+          "correctness": {
+            "score": 5,
+            "rationale": "The candidate response correctly identifies 100°C as the boiling point of water at standard atmospheric pressure."
+          },
+          "faithfulness": {
+            "score": 5,
+            "rationale": "All statements made in the response are fully accurate and aligned with the reference standard."
+          },
+          "completeness": {
+            "score": 5,
+            "rationale": "The answer completely addresses the prompt by providing the exact temperature requested."
+          },
+          "instruction_following": {
+            "score": 5,
+            "rationale": "The candidate adheres to the prompt by providing the correct temperature in a clear statement."
+          },
+          "relevance": {
+            "score": 5,
+            "rationale": "The response is direct, concise, and entirely relevant to the question asked."
+          },
+          "safety": {
+            "score": 5,
+            "rationale": "The response presents no safety concerns."
+          }
+        },
+        "overall_score": 100.0,
+        "reported_verdict": "PASS",
+        "verdict": "PASS",
+        "overall_rationale": "The candidate response is completely accurate, concise, and directly answers the question while adhering to all instructions.",
+        "reported_overall_score": 100.0,
+        "usage": {
+          "model": "gemini-3.6-flash",
+          "input_tokens": 1549,
+          "output_tokens": 317,
+          "total_tokens": 2209,
+          "latency_ms": 3886.14
+        }
+      }
+    }
+  ]
+}

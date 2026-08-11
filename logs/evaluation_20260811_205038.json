@@ -1,0 +1,44 @@
+{
+  "experiment": {
+    "name": "LLM-as-Judge evaluation",
+    "mode": "pointwise",
+    "started_at": "2026-08-11T20:50:35.049679+00:00",
+    "completed_at": "2026-08-11T20:50:38.379715+00:00"
+  },
+  "summary": {
+    "total_tests": 5,
+    "successful": 0,
+    "failed": 5,
+    "pass_count": 0,
+    "fail_count": 0,
+    "mean_score": null,
+    "pass_rate": null
+  },
+  "results": [
+    {
+      "status": "failed",
+      "test_id": "qa_001",
+      "error": "RuntimeError: LLM API request failed with HTTP 404.\nResponse: [{\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use a newer model for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/migrate-to-interactions).\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n]"
+    },
+    {
+      "status": "failed",
+      "test_id": "qa_002",
+      "error": "RuntimeError: LLM API request failed with HTTP 404.\nResponse: [{\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use a newer model for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/migrate-to-interactions).\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n]"
+    },
+    {
+      "status": "failed",
+      "test_id": "qa_003",
+      "error": "RuntimeError: LLM API request failed with HTTP 404.\nResponse: [{\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use a newer model for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/migrate-to-interactions).\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n]"
+    },
+    {
+      "status": "failed",
+      "test_id": "qa_004",
+      "error": "RuntimeError: LLM API request failed with HTTP 404.\nResponse: [{\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use a newer model for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/migrate-to-interactions).\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n]"
+    },
+    {
+      "status": "failed",
+      "test_id": "qa_005",
+      "error": "RuntimeError: LLM API request failed with HTTP 404.\nResponse: [{\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use a newer model for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/migrate-to-interactions).\",\n    \"status\": \"NOT_FOUND\"\n  }\n}\n]"
+    }
+  ]
+}

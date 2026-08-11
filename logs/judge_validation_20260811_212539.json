@@ -1,0 +1,303 @@
+{
+  "experiment": {
+    "name": "Gold-label judge validation",
+    "mode": "judge_validation",
+    "started_at": "2026-08-11T21:25:28.335128+00:00",
+    "completed_at": "2026-08-11T21:25:39.922110+00:00"
+  },
+  "summary": {
+    "total_tests": 5,
+    "successful": 5,
+    "failed": 0,
+    "agreements": 5,
+    "disagreements": 0,
+    "agreement_rate": 100.0
+  },
+  "results": [
+    {
+      "status": "success",
+      "test_id": "validation_001",
+      "validation": {
+        "gold_verdict": "PASS",
+        "judge_verdict": "PASS",
+        "gold_score_requirement": {
+          "min": 90,
+          "max": null
+        },
+        "judge_score": 100.0,
+        "verdict_match": true,
+        "score_match": true,
+        "agreement": true
+      },
+      "judge_result": {
+        "test_id": "validation_001",
+        "criteria": {
+          "correctness": {
+            "score": 5,
+            "rationale": "The candidate response is factually correct and matches the expected output exactly."
+          },
+          "faithfulness": {
+            "score": 5,
+            "rationale": "The response is fully supported by the expected output and the task input, with no unsupported claims."
+          },
+          "completeness": {
+            "score": 5,
+            "rationale": "The response fully addresses the task input without omitting any required components."
+          },
+          "instruction_following": {
+            "score": 5,
+            "rationale": "The response adheres exactly to the system prompt's requirement for an accurate and concise answer."
+          },
+          "relevance": {
+            "score": 5,
+            "rationale": "The response is entirely focused on the task and contains no irrelevant or tangential information."
+          },
+          "safety": {
+            "score": 5,
+            "rationale": "The response is safe, harmless, and does not contain any misleading or prohibited content."
+          }
+        },
+        "overall_score": 100.0,
+        "reported_verdict": "PASS",
+        "verdict": "PASS",
+        "overall_rationale": "The candidate response is fully correct, concise, and adheres to all instructions and safety requirements.",
+        "reported_overall_score": 100.0,
+        "usage": {
+          "model": "mistral-small-latest",
+          "input_tokens": 1467,
+          "output_tokens": 301,
+          "total_tokens": 1768,
+          "latency_ms": 2073.85
+        }
+      }
+    },
+    {
+      "status": "success",
+      "test_id": "validation_002",
+      "validation": {
+        "gold_verdict": "FAIL",
+        "judge_verdict": "FAIL",
+        "gold_score_requirement": {
+          "min": null,
+          "max": 69
+        },
+        "judge_score": 57.5,
+        "verdict_match": true,
+        "score_match": true,
+        "agreement": true
+      },
+      "judge_result": {
+        "test_id": "validation_002",
+        "criteria": {
+          "correctness": {
+            "score": 2,
+            "rationale": "The candidate output states 15 × 8 = 110, which is factually incorrect (15 × 8 = 120). This is a major factual error."
+          },
+          "faithfulness": {
+            "score": 1,
+            "rationale": "The response provides an incorrect calculation (110) with no grounding in the expected answer (120) or arithmetic rules, making it unfaithful to the task."
+          },
+          "completeness": {
+            "score": 5,
+            "rationale": "The response attempts to address the task by providing a calculation, though incorrect. It does not omit the required component of solving the arithmetic problem."
+          },
+          "instruction_following": {
+            "score": 5,
+            "rationale": "The response follows the system prompt to solve the arithmetic problem, though the solution is incorrect. No formatting constraints were violated."
+          },
+          "relevance": {
+            "score": 5,
+            "rationale": "The response is directly relevant to the task, providing a calculation for 15 multiplied by 8, even though the result is wrong."
+          },
+          "safety": {
+            "score": 5,
+            "rationale": "The response is safe and does not contain harmful, misleading, or prohibited content. The error is factual, not safety-related."
+          }
+        },
+        "overall_score": 57.5,
+        "reported_verdict": "FAIL",
+        "verdict": "FAIL",
+        "overall_rationale": "The candidate response contains a major factual error (110 instead of 120), resulting in a low score for correctness and faithfulness. While other criteria are satisfied, the fundamental inaccuracy makes the response unacceptable overall.",
+        "reported_overall_score": 30.0,
+        "usage": {
+          "model": "mistral-small-latest",
+          "input_tokens": 1471,
+          "output_tokens": 412,
+          "total_tokens": 1883,
+          "latency_ms": 2965.03
+        }
+      }
+    },
+    {
+      "status": "success",
+      "test_id": "validation_003",
+      "validation": {
+        "gold_verdict": "PASS",
+        "judge_verdict": "PASS",
+        "gold_score_requirement": {
+          "min": 90,
+          "max": null
+        },
+        "judge_score": 100.0,
+        "verdict_match": true,
+        "score_match": true,
+        "agreement": true
+      },
+      "judge_result": {
+        "test_id": "validation_003",
+        "criteria": {
+          "correctness": {
+            "score": 5,
+            "rationale": "The candidate response is factually accurate and logically correct, matching the expected output exactly."
+          },
+          "faithfulness": {
+            "score": 5,
+            "rationale": "All claims in the response are fully supported by the expected output and the task requirements."
+          },
+          "completeness": {
+            "score": 5,
+            "rationale": "The response addresses all material requirements of the input, including the process, inputs, and outputs of photosynthesis."
+          },
+          "instruction_following": {
+            "score": 5,
+            "rationale": "The response adheres exactly to the system prompt (one clear sentence) and the task input."
+          },
+          "relevance": {
+            "score": 5,
+            "rationale": "The response is entirely focused on the requested task with no irrelevant or tangential information."
+          },
+          "safety": {
+            "score": 5,
+            "rationale": "The response is safe, harmless, and does not contain any misleading or prohibited content."
+          }
+        },
+        "overall_score": 100.0,
+        "reported_verdict": "PASS",
+        "verdict": "PASS",
+        "overall_rationale": "The candidate response fully satisfies all criteria, matching the expected output exactly while adhering to all instructions and constraints.",
+        "reported_overall_score": 100.0,
+        "usage": {
+          "model": "mistral-small-latest",
+          "input_tokens": 1497,
+          "output_tokens": 273,
+          "total_tokens": 1770,
+          "latency_ms": 2042.03
+        }
+      }
+    },
+    {
+      "status": "success",
+      "test_id": "validation_004",
+      "validation": {
+        "gold_verdict": "FAIL",
+        "judge_verdict": "FAIL",
+        "gold_score_requirement": {
+          "min": null,
+          "max": 69
+        },
+        "judge_score": 60.0,
+        "verdict_match": true,
+        "score_match": true,
+        "agreement": true
+      },
+      "judge_result": {
+        "test_id": "validation_004",
+        "criteria": {
+          "correctness": {
+            "score": 5,
+            "rationale": "The candidate response lists multiple benefits of drinking water, all of which are factually correct and logically sound."
+          },
+          "faithfulness": {
+            "score": 4,
+            "rationale": "All claims are factually correct and relevant to the benefits of drinking water, but the response exceeds the expected output by including more than two benefits, which is not supported by the system prompt."
+          },
+          "completeness": {
+            "score": 2,
+            "rationale": "The response includes more than two benefits, violating the system prompt's requirement for exactly two benefits."
+          },
+          "instruction_following": {
+            "score": 1,
+            "rationale": "The candidate response does not follow the system prompt's instruction to give exactly two benefits in a concise answer."
+          },
+          "relevance": {
+            "score": 3,
+            "rationale": "While all listed benefits are relevant to drinking water, the response includes excessive information beyond the requested two benefits, making it less focused."
+          },
+          "safety": {
+            "score": 5,
+            "rationale": "The response is entirely safe and does not contain any harmful, misleading, or prohibited content."
+          }
+        },
+        "overall_score": 60.0,
+        "reported_verdict": "FAIL",
+        "verdict": "FAIL",
+        "overall_rationale": "The candidate response fails to follow the system prompt's instruction to provide exactly two benefits in a concise answer, resulting in a major deviation. While the content is correct and relevant, the instruction-following and completeness criteria are not met, leading to an overall FAIL verdict.",
+        "reported_overall_score": 60.0,
+        "usage": {
+          "model": "mistral-small-latest",
+          "input_tokens": 1502,
+          "output_tokens": 340,
+          "total_tokens": 1842,
+          "latency_ms": 2531.82
+        }
+      }
+    },
+    {
+      "status": "success",
+      "test_id": "validation_005",
+      "validation": {
+        "gold_verdict": "PASS",
+        "judge_verdict": "PASS",
+        "gold_score_requirement": {
+          "min": 90,
+          "max": null
+        },
+        "judge_score": 100.0,
+        "verdict_match": true,
+        "score_match": true,
+        "agreement": true
+      },
+      "judge_result": {
+        "test_id": "validation_005",
+        "criteria": {
+          "correctness": {
+            "score": 5,
+            "rationale": "The candidate response is factually correct and matches the expected output exactly."
+          },
+          "faithfulness": {
+            "score": 5,
+            "rationale": "The response is fully supported by the expected output and the task input."
+          },
+          "completeness": {
+            "score": 5,
+            "rationale": "The response fully addresses the task input without omissions."
+          },
+          "instruction_following": {
+            "score": 5,
+            "rationale": "The response adheres to the system prompt to answer accurately and directly addresses the task input."
+          },
+          "relevance": {
+            "score": 5,
+            "rationale": "The response is entirely focused on the requested task with no irrelevant content."
+          },
+          "safety": {
+            "score": 5,
+            "rationale": "The response is safe and does not contain any harmful or misleading content."
+          }
+        },
+        "overall_score": 100.0,
+        "reported_verdict": "PASS",
+        "verdict": "PASS",
+        "overall_rationale": "The candidate response is fully correct, complete, and adheres to all instructions and safety requirements.",
+        "reported_overall_score": 100.0,
+        "usage": {
+          "model": "mistral-small-latest",
+          "input_tokens": 1474,
+          "output_tokens": 287,
+          "total_tokens": 1761,
+          "latency_ms": 1967.42
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "mode": "score_clustering",
+  "tests": [
+    {
+      "id": "cluster_001",
+      "input": "What is the capital of France?",
+      "system_prompt": "Answer accurately and concisely.",
+      "model_output": "The capital of France is Paris.",
+      "expected_output": "The capital of France is Paris.",
+      "criteria": [
+        "correctness",
+        "faithfulness",
+        "completeness",
+        "instruction_following",
+        "relevance",
+        "safety"
+      ]
+    },
+    {
+      "id": "cluster_002",
+      "input": "What is 15 multiplied by 8?",
+      "system_prompt": "Solve the arithmetic problem correctly.",
+      "model_output": "15 × 8 = 110.",
+      "expected_output": "120",
+      "criteria": [
+        "correctness",
+        "faithfulness",
+        "completeness",
+        "instruction_following",
+        "relevance",
+        "safety"
+      ]
+    },
+    {
+      "id": "cluster_003",
+      "input": "Explain photosynthesis in one sentence.",
+      "system_prompt": "Answer in exactly one clear sentence.",
+      "model_output": "Photosynthesis is the process by which plants use sunlight, water, and carbon dioxide to produce glucose and oxygen.",
+      "expected_output": "Photosynthesis is the process by which plants use sunlight, water, and carbon dioxide to produce glucose and oxygen.",
+      "criteria": [
+        "correctness",
+        "faithfulness",
+        "completeness",
+        "instruction_following",
+        "relevance",
+        "safety"
+      ]
+    },
+    {
+      "id": "cluster_004",
+      "input": "What are two benefits of drinking enough water?",
+      "system_prompt": "Give exactly two benefits in a concise answer.",
+      "model_output": "Drinking enough water helps maintain hydration, supports normal body functions, regulates temperature, supports digestion, lubricates joints, transports nutrients, and contributes to healthy skin.",
+      "expected_output": "Drinking enough water helps maintain hydration and supports normal body functions.",
+      "criteria": [
+        "correctness",
+        "faithfulness",
+        "completeness",
+        "instruction_following",
+        "relevance",
+        "safety"
+      ]
+    },
+    {
+      "id": "cluster_005",
+      "input": "Explain why regular exercise is beneficial.",
+      "system_prompt": "Give a clear and relevant explanation.",
+      "model_output": "Regular exercise improves cardiovascular health, physical fitness, strength, and overall well-being.",
+      "expected_output": "Regular exercise improves physical fitness, cardiovascular health, strength, and overall well-being.",
+      "criteria": [
+        "correctness",
+        "faithfulness",
+        "completeness",
+        "instruction_following",
+        "relevance",
+        "safety"
+      ]
+    },
+    {
+      "id": "cluster_006",
+      "input": "What is the largest planet in our solar system?",
+      "system_prompt": "Answer accurately.",
+      "model_output": "Jupiter is the largest planet in our solar system.",
+      "expected_output": "Jupiter is the largest planet in our solar system.",
+      "criteria": [
+        "correctness",
+        "faithfulness",
+        "completeness",
+        "instruction_following",
+        "relevance",
+        "safety"
+      ]
+    },
+    {
+      "id": "cluster_007",
+      "input": "What is 17 + 25?",
+      "system_prompt": "Provide the correct numerical answer.",
+      "model_output": "42.",
+      "expected_output": "42.",
+      "criteria": [
+        "correctness",
+        "faithfulness",
+        "completeness",
+        "instruction_following",
+        "relevance",
+        "safety"
+      ]
+    },
+    {
+      "id": "cluster_008",
+      "input": "Give a brief definition of machine learning.",
+      "system_prompt": "Give a concise definition.",
+      "model_output": "Machine learning is a field of artificial intelligence in which systems learn patterns from data to make predictions or decisions.",
+      "expected_output": "Machine learning is a field of artificial intelligence in which systems learn patterns from data to make predictions or decisions.",
+      "criteria": [
+        "correctness",
+        "faithfulness",
+        "completeness",
+        "instruction_following",
+        "relevance",
+        "safety"
+      ]
+    },
+    {
+      "id": "cluster_009",
+      "input": "Name one renewable energy source.",
+      "system_prompt": "Give exactly one example.",
+      "model_output": "Solar energy.",
+      "expected_output": "Solar energy.",
+      "criteria": [
+        "correctness",
+        "faithfulness",
+        "completeness",
+        "instruction_following",
+        "relevance",
+        "safety"
+      ]
+    },
+    {
+      "id": "cluster_010",
+      "input": "What is the boiling point of water at standard atmospheric pressure?",
+      "system_prompt": "Answer with the correct temperature.",
+      "model_output": "Water boils at 100°C at standard atmospheric pressure.",
+      "expected_output": "100°C",
+      "criteria": [
+        "correctness",
+        "faithfulness",
+        "completeness",
+        "instruction_following",
+        "relevance",
+        "safety"
+      ]
+    }
+  ]
+}

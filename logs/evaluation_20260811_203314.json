@@ -1,0 +1,44 @@
+{
+  "experiment": {
+    "name": "LLM-as-Judge evaluation",
+    "mode": "pointwise",
+    "started_at": "2026-08-11T20:33:11.434865+00:00",
+    "completed_at": "2026-08-11T20:33:14.180321+00:00"
+  },
+  "summary": {
+    "total_tests": 5,
+    "successful": 0,
+    "failed": 5,
+    "pass_count": 0,
+    "fail_count": 0,
+    "mean_score": null,
+    "pass_rate": null
+  },
+  "results": [
+    {
+      "status": "failed",
+      "test_id": "qa_001",
+      "error": "RuntimeError: LLM API request failed: 404 Client Error: Not Found for url: https://generativelanguage.googleapis.com/v1beta/openai/chat/completions"
+    },
+    {
+      "status": "failed",
+      "test_id": "qa_002",
+      "error": "RuntimeError: LLM API request failed: 404 Client Error: Not Found for url: https://generativelanguage.googleapis.com/v1beta/openai/chat/completions"
+    },
+    {
+      "status": "failed",
+      "test_id": "qa_003",
+      "error": "RuntimeError: LLM API request failed: 404 Client Error: Not Found for url: https://generativelanguage.googleapis.com/v1beta/openai/chat/completions"
+    },
+    {
+      "status": "failed",
+      "test_id": "qa_004",
+      "error": "RuntimeError: LLM API request failed: 404 Client Error: Not Found for url: https://generativelanguage.googleapis.com/v1beta/openai/chat/completions"
+    },
+    {
+      "status": "failed",
+      "test_id": "qa_005",
+      "error": "RuntimeError: LLM API request failed: 404 Client Error: Not Found for url: https://generativelanguage.googleapis.com/v1beta/openai/chat/completions"
+    }
+  ]
+}

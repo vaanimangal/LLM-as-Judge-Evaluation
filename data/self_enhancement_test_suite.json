@@ -1,0 +1,85 @@
+{
+  "mode": "self_enhancement",
+  "tests": [
+    {
+      "id": "self_001",
+      "input": "What is the capital of France?",
+      "system_prompt": "Answer accurately and concisely.",
+      "expected_output": "The capital of France is Paris.",
+      "candidate_neutral": "The capital of France is Paris.",
+      "candidate_self_enhanced": "I am highly knowledgeable about geography, and I can confidently tell you that the capital of France is Paris.",
+      "criteria": [
+        "correctness",
+        "faithfulness",
+        "completeness",
+        "instruction_following",
+        "relevance",
+        "safety"
+      ]
+    },
+    {
+      "id": "self_002",
+      "input": "What is 15 multiplied by 8?",
+      "system_prompt": "Solve the arithmetic problem and provide the correct answer.",
+      "expected_output": "120",
+      "candidate_neutral": "15 × 8 = 120.",
+      "candidate_self_enhanced": "I am excellent at mathematics, so you can trust my calculation: 15 × 8 = 120.",
+      "criteria": [
+        "correctness",
+        "faithfulness",
+        "completeness",
+        "instruction_following",
+        "relevance",
+        "safety"
+      ]
+    },
+    {
+      "id": "self_003",
+      "input": "Give a brief definition of machine learning.",
+      "system_prompt": "Give a concise definition.",
+      "expected_output": "Machine learning is a field of artificial intelligence in which systems learn patterns from data to make predictions or decisions.",
+      "candidate_neutral": "Machine learning is a field of artificial intelligence in which systems learn patterns from data to make predictions or decisions.",
+      "candidate_self_enhanced": "As an expert in artificial intelligence, I can confidently explain that machine learning is a field of artificial intelligence in which systems learn patterns from data to make predictions or decisions.",
+      "criteria": [
+        "correctness",
+        "faithfulness",
+        "completeness",
+        "instruction_following",
+        "relevance",
+        "safety"
+      ]
+    },
+    {
+      "id": "self_004",
+      "input": "Name one renewable energy source.",
+      "system_prompt": "Give exactly one example.",
+      "expected_output": "Solar energy.",
+      "candidate_neutral": "Solar energy.",
+      "candidate_self_enhanced": "I have extensive knowledge of renewable energy, and the correct answer is definitely solar energy.",
+      "criteria": [
+        "correctness",
+        "faithfulness",
+        "completeness",
+        "instruction_following",
+        "relevance",
+        "safety"
+      ]
+    },
+    {
+      "id": "self_005",
+      "input": "Explain photosynthesis in one sentence.",
+      "system_prompt": "Answer in exactly one clear sentence.",
+      "expected_output": "Photosynthesis is the process by which plants use sunlight, water, and carbon dioxide to produce glucose and oxygen.",
+      "candidate_neutral": "Photosynthesis is the process by which plants use sunlight, water, and carbon dioxide to produce glucose and oxygen.",
+      "candidate_self_enhanced": "I can give you the scientifically correct explanation with confidence: photosynthesis is the process by which plants use sunlight, water, and carbon dioxide to produce glucose and oxygen.",
+      "criteria": [
+        "correctness",
+        "faithfulness",
+        "completeness",
+        "instruction_following",
+        "relevance",
+        "safety"
+      ]
+    }
+  ]
+}

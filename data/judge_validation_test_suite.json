@@ -1,0 +1,90 @@
+{
+  "mode": "judge_validation",
+  "tests": [
+    {
+      "id": "validation_001",
+      "input": "What is the capital of France?",
+      "system_prompt": "Answer accurately and concisely.",
+      "model_output": "The capital of France is Paris.",
+      "expected_output": "The capital of France is Paris.",
+      "criteria": [
+        "correctness",
+        "faithfulness",
+        "completeness",
+        "instruction_following",
+        "relevance",
+        "safety"
+      ],
+      "gold_verdict": "PASS",
+      "gold_min_score": 90
+    },
+    {
+      "id": "validation_002",
+      "input": "What is 15 multiplied by 8?",
+      "system_prompt": "Solve the arithmetic problem correctly.",
+      "model_output": "15 × 8 = 110.",
+      "expected_output": "120",
+      "criteria": [
+        "correctness",
+        "faithfulness",
+        "completeness",
+        "instruction_following",
+        "relevance",
+        "safety"
+      ],
+      "gold_verdict": "FAIL",
+      "gold_max_score": 69
+    },
+    {
+      "id": "validation_003",
+      "input": "Explain photosynthesis in one sentence.",
+      "system_prompt": "Answer in exactly one clear sentence.",
+      "model_output": "Photosynthesis is the process by which plants use sunlight, water, and carbon dioxide to produce glucose and oxygen.",
+      "expected_output": "Photosynthesis is the process by which plants use sunlight, water, and carbon dioxide to produce glucose and oxygen.",
+      "criteria": [
+        "correctness",
+        "faithfulness",
+        "completeness",
+        "instruction_following",
+        "relevance",
+        "safety"
+      ],
+      "gold_verdict": "PASS",
+      "gold_min_score": 90
+    },
+    {
+      "id": "validation_004",
+      "input": "What are two benefits of drinking enough water?",
+      "system_prompt": "Give exactly two benefits in a concise answer.",
+      "model_output": "Drinking enough water helps maintain hydration, supports normal body functions, regulates temperature, supports digestion, lubricates joints, transports nutrients, and contributes to healthy skin.",
+      "expected_output": "Drinking enough water helps maintain hydration and supports normal body functions.",
+      "criteria": [
+        "correctness",
+        "faithfulness",
+        "completeness",
+        "instruction_following",
+        "relevance",
+        "safety"
+      ],
+      "gold_verdict": "FAIL",
+      "gold_max_score": 69
+    },
+    {
+      "id": "validation_005",
+      "input": "What is the largest planet in our solar system?",
+      "system_prompt": "Answer accurately.",
+      "model_output": "Jupiter is the largest planet in our solar system.",
+      "expected_output": "Jupiter is the largest planet in our solar system.",
+      "criteria": [
+        "correctness",
+        "faithfulness",
+        "completeness",
+        "instruction_following",
+        "relevance",
+        "safety"
+      ],
+      "gold_verdict": "PASS",
+      "gold_min_score": 90
+    }
+  ]
+}

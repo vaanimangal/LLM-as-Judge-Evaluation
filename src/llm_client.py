@@ -257,7 +257,18 @@ class LLMClient:
         payload: Dict[str, Any],
     ) -> requests.Response:
         """
-        Perform the HTTP request with controlled transient-error retries.
+        Perform the HTTP request with controlled retry handling.
+
+        Handles:
+        - 429 rate limiting
+        - 500
+        - 502
+        - 503
+        - 504
+        - transient network failures
+
+        For HTTP 429, the server's Retry-After header is preferred.
+        If it is unavailable, exponential backoff is used.
         """
 
         transient_statuses = {
@@ -269,6 +280,7 @@ class LLMClient:
         }
 
         for attempt in range(self.max_request_retries + 1):
+
             try:
                 response = requests.post(
                     endpoint,
@@ -278,9 +290,11 @@ class LLMClient:
                 )
 
             except requests.RequestException as exc:
+
                 if attempt >= self.max_request_retries:
                     raise RuntimeError(
-                        f"LLM API request failed: {exc}"
+                        f"LLM API request failed after "
+                        f"{self.max_request_retries} retries: {exc}"
                     ) from exc
 
                 delay = self._calculate_retry_delay(
@@ -290,53 +304,102 @@ class LLMClient:
 
                 print(
                     f"    Transient network error. "
-                    f"Retrying in {delay:.1f}s...",
+                    f"Retrying in {delay:.1f}s "
+                    f"(attempt {attempt + 2}/"
+                    f"{self.max_request_retries + 1})...",
                     flush=True,
                 )
 
                 time.sleep(delay)
                 continue
 
-            if response.status_code not in transient_statuses:
-                try:
-                    response.raise_for_status()
-                except requests.RequestException as exc:
-                    raise RuntimeError(
-                        f"LLM API request failed: {exc}"
-                    ) from exc
+            # -----------------------------------------------------------
+            # Successful response
+            # -----------------------------------------------------------
 
+            if 200 <= response.status_code < 300:
                 return response
 
-            if attempt >= self.max_request_retries:
-                try:
-                    response.raise_for_status()
-                except requests.RequestException as exc:
-                    raise RuntimeError(
-                        f"LLM API request failed after "
-                        f"{self.max_request_retries} retries: {exc}"
-                    ) from exc
+            # -----------------------------------------------------------
+            # HTTP 429 - rate limiting
+            # -----------------------------------------------------------
 
-                raise RuntimeError(
-                    "LLM API request failed after retries."
+            if response.status_code == 429:
+
+                error_body = response.text[:2000].strip()
+
+                if attempt >= self.max_request_retries:
+                    raise RuntimeError(
+                        "LLM API rate limit exceeded "
+                        f"(HTTP 429) after "
+                        f"{self.max_request_retries} retries.\n"
+                        f"Response: {error_body}"
+                    )
+
+                delay = self._calculate_retry_delay(
+                    attempt=attempt,
+                    response=response,
                 )
 
-            delay = self._calculate_retry_delay(
-                attempt=attempt,
-                response=response,
+                print(
+                    f"    HTTP 429 rate limit. "
+                    f"Retrying in {delay:.1f}s "
+                    f"(attempt {attempt + 2}/"
+                    f"{self.max_request_retries + 1})...",
+                    flush=True,
+                )
+
+                time.sleep(delay)
+                continue
+
+            # -----------------------------------------------------------
+            # Other transient server errors
+            # -----------------------------------------------------------
+
+            if response.status_code in transient_statuses:
+
+                error_body = response.text[:2000].strip()
+
+                if attempt >= self.max_request_retries:
+                    raise RuntimeError(
+                        f"LLM API request failed with HTTP "
+                        f"{response.status_code} after "
+                        f"{self.max_request_retries} retries.\n"
+                        f"Response: {error_body}"
+                    )
+
+                delay = self._calculate_retry_delay(
+                    attempt=attempt,
+                    response=response,
+                )
+
+                print(
+                    f"    HTTP {response.status_code} from LLM API. "
+                    f"Retrying in {delay:.1f}s "
+                    f"(attempt {attempt + 2}/"
+                    f"{self.max_request_retries + 1})...",
+                    flush=True,
+                )
+
+                time.sleep(delay)
+                continue
+
+            # -----------------------------------------------------------
+            # Non-transient API error
+            # -----------------------------------------------------------
+
+            error_body = response.text[:2000].strip()
+
+            raise RuntimeError(
+                f"LLM API request failed with HTTP "
+                f"{response.status_code}.\n"
+                f"Response: {error_body}"
             )
 
-            print(
-                f"    HTTP {response.status_code} from LLM API. "
-                f"Retrying in {delay:.1f}s "
-                f"(attempt {attempt + 2}/"
-                f"{self.max_request_retries + 1})...",
-                flush=True,
-            )
-
-            time.sleep(delay)
-
-        raise RuntimeError("LLM API request failed unexpectedly.")
-
+        raise RuntimeError(
+            "LLM API request failed unexpectedly."
+        ) 
+    
     def _calculate_retry_delay(
         self,
         *,

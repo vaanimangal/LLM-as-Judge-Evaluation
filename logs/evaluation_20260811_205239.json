@@ -1,0 +1,239 @@
+{
+  "experiment": {
+    "name": "LLM-as-Judge evaluation",
+    "mode": "pointwise",
+    "started_at": "2026-08-11T20:52:06.624826+00:00",
+    "completed_at": "2026-08-11T20:52:39.011478+00:00"
+  },
+  "summary": {
+    "total_tests": 5,
+    "successful": 5,
+    "failed": 0,
+    "pass_count": 4,
+    "fail_count": 1,
+    "mean_score": 82.5,
+    "pass_rate": 80.0
+  },
+  "results": [
+    {
+      "status": "success",
+      "result": {
+        "test_id": "qa_001",
+        "criteria": {
+          "correctness": {
+            "score": 5,
+            "rationale": "The candidate response correctly identifies Paris as the capital of France."
+          },
+          "faithfulness": {
+            "score": 5,
+            "rationale": "The claim made in the response is fully supported by standard factual knowledge and the expected output."
+          },
+          "completeness": {
+            "score": 5,
+            "rationale": "The response completely answers the prompt without missing any required details."
+          },
+          "instruction_following": {
+            "score": 5,
+            "rationale": "The candidate strictly follows the instructions by providing an accurate and concise answer."
+          },
+          "relevance": {
+            "score": 5,
+            "rationale": "The response directly addresses the question with no tangential or unnecessary information."
+          },
+          "safety": {
+            "score": 5,
+            "rationale": "The prompt and response present no safety issues."
+          }
+        },
+        "overall_score": 100.0,
+        "reported_verdict": "PASS",
+        "verdict": "PASS",
+        "overall_rationale": "The candidate response is completely accurate, concise, relevant, and follows all provided instructions perfectly.",
+        "reported_overall_score": 100.0,
+        "usage": {
+          "model": "gemini-3.6-flash",
+          "input_tokens": 1532,
+          "output_tokens": 304,
+          "total_tokens": 2280,
+          "latency_ms": 4631.24
+        }
+      }
+    },
+    {
+      "status": "success",
+      "result": {
+        "test_id": "qa_002",
+        "criteria": {
+          "correctness": {
+            "score": 1,
+            "rationale": "The mathematical calculation is incorrect; 15 multiplied by 8 is 120, not 110."
+          },
+          "faithfulness": {
+            "score": 1,
+            "rationale": "The response contradicts the expected mathematical reference output."
+          },
+          "completeness": {
+            "score": 4,
+            "rationale": "The response attempts to show the calculation and state a result, though the result itself is wrong."
+          },
+          "instruction_following": {
+            "score": 2,
+            "rationale": "The candidate failed to follow the system prompt instruction to 'Answer accurately'."
+          },
+          "relevance": {
+            "score": 5,
+            "rationale": "The response is directly focused on the requested multiplication problem without extraneous text."
+          },
+          "safety": {
+            "score": 5,
+            "rationale": "The response contains no safety hazards or harmful content."
+          }
+        },
+        "overall_score": 33.75,
+        "reported_verdict": "FAIL",
+        "verdict": "FAIL",
+        "overall_rationale": "The candidate response fails on a basic arithmetic calculation, stating that 15 * 8 = 110 instead of 120. This violates both correctness requirements and the system prompt instruction to answer accurately.",
+        "reported_overall_score": 47.0,
+        "usage": {
+          "model": "gemini-3.6-flash",
+          "input_tokens": 1551,
+          "output_tokens": 342,
+          "total_tokens": 2835,
+          "latency_ms": 7780.28
+        }
+      }
+    },
+    {
+      "status": "success",
+      "result": {
+        "test_id": "qa_003",
+        "criteria": {
+          "correctness": {
+            "score": 5,
+            "rationale": "The information provided about photosynthesis and its role in producing glucose and oxygen is factually and logically correct."
+          },
+          "faithfulness": {
+            "score": 5,
+            "rationale": "All substantive claims in the response are factually grounded and align with established scientific facts and the reference output."
+          },
+          "completeness": {
+            "score": 5,
+            "rationale": "The response covers the inputs, outputs, and significance of photosynthesis thoroughly."
+          },
+          "instruction_following": {
+            "score": 3,
+            "rationale": "The candidate provided two sentences instead of following the explicit instruction in both the prompt and system prompt to answer in 'exactly one concise sentence'."
+          },
+          "relevance": {
+            "score": 5,
+            "rationale": "The response is entirely focused on explaining photosynthesis without any off-topic material."
+          },
+          "safety": {
+            "score": 5,
+            "rationale": "The response is completely safe and harmless."
+          }
+        },
+        "overall_score": 92.5,
+        "reported_verdict": "PASS",
+        "verdict": "PASS",
+        "overall_rationale": "The response is factually accurate, relevant, and safe, but fails an explicit formatting constraint by providing two sentences instead of exactly one sentence as requested.",
+        "reported_overall_score": 94.0,
+        "usage": {
+          "model": "gemini-3.6-flash",
+          "input_tokens": 1583,
+          "output_tokens": 342,
+          "total_tokens": 2566,
+          "latency_ms": 6958.42
+        }
+      }
+    },
+    {
+      "status": "success",
+      "result": {
+        "test_id": "qa_004",
+        "criteria": {
+          "correctness": {
+            "score": 5,
+            "rationale": "The information provided is factually accurate with no errors."
+          },
+          "faithfulness": {
+            "score": 5,
+            "rationale": "All claims made in the candidate response are fully supported and grounded."
+          },
+          "completeness": {
+            "score": 3,
+            "rationale": "The response only lists two benefits (cardiovascular health and weight management), omitting several major benefits such as mental health, sleep, and physical fitness."
+          },
+          "instruction_following": {
+            "score": 4,
+            "rationale": "The response is concise as requested, though it provides a single sentence with two items rather than an itemized list."
+          },
+          "relevance": {
+            "score": 5,
+            "rationale": "The response is directly focused on the prompt without any tangential material."
+          },
+          "safety": {
+            "score": 5,
+            "rationale": "The response is entirely safe and presents no risk or harm."
+          }
+        },
+        "overall_score": 86.25,
+        "reported_verdict": "PASS",
+        "verdict": "PASS",
+        "overall_rationale": "The candidate response is accurate, safe, concise, and highly relevant. However, it is moderately incomplete as it omits several key benefits of exercise (such as mental well-being and sleep).",
+        "reported_overall_score": 89.0,
+        "usage": {
+          "model": "gemini-3.6-flash",
+          "input_tokens": 1562,
+          "output_tokens": 347,
+          "total_tokens": 2809,
+          "latency_ms": 7265.35
+        }
+      }
+    },
+    {
+      "status": "success",
+      "result": {
+        "test_id": "qa_005",
+        "criteria": {
+          "correctness": {
+            "score": 5,
+            "rationale": "The explanation is factually accurate and logically sound, covering key security risks of password sharing."
+          },
+          "faithfulness": {
+            "score": 5,
+            "rationale": "The candidate response aligns directly with the concepts presented in the reference output without introducing unsupported assertions."
+          },
+          "completeness": {
+            "score": 5,
+            "rationale": "The response fully answers why passwords should not be shared, addressing misuse, exposure of private info, and account compromise."
+          },
+          "instruction_following": {
+            "score": 5,
+            "rationale": "The output directly follows the prompt by providing a clear, concise, and safety-conscious explanation."
+          },
+          "relevance": {
+            "score": 5,
+            "rationale": "The response is completely focused on the prompt without any off-topic information."
+          },
+          "safety": {
+            "score": 5,
+            "rationale": "The output promotes sound digital security practices and contains no harmful advice."
+          }
+        },
+        "overall_score": 100.0,
+        "reported_verdict": "PASS",
+        "verdict": "PASS",
+        "overall_rationale": "The candidate response is excellent, accurate, completely aligned with the expected response, and follows all prompt instructions perfectly.",
+        "reported_overall_score": 100.0,
+        "usage": {
+          "model": "gemini-3.6-flash",
+          "input_tokens": 1573,
+          "output_tokens": 336,
+          "total_tokens": 2362,
+          "latency_ms": 5732.65
+        }
+      }
+    }
+  ]
+}
